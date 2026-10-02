@@ -970,7 +970,7 @@ FONTS = {
         },
     },
     "f15": {
-        "name": "Sᴍᴀʟʟ Cᴀᴘs",
+        "name": "Sᴍᴀʟʟ Cᴀps",
         "map": {
             "A": "A",
             "B": "B",
@@ -2055,10 +2055,10 @@ def apply_font(text, font_key):
 user_state = {}
 
 
-def check_subscription(user_id):
+def verify_user_membership(user_id):
   try:
     member = bot.get_chat_member(CHANNEL_ID, user_id)
-    # Agar user channel ka member, creator, admin ya restricted hai, ya phir join request bhej rakhi hai (left/kicked nahi hai)
+    # Agar user member hai, creator hai, admin hai, ya restricted hai toh access mil jayega
     if member.status in [
         "member",
         "creator",
@@ -2066,24 +2066,10 @@ def check_subscription(user_id):
         "restricted",
         "left",
     ]:
-      # Agar status 'left' ya 'kicked' nahi hai toh access granted maanege,
-      # Telegram API mein join request ke liye member status 'left' ya 'restricted' ho sakta hai,
-      # isliye hum try-except mein safety rakhte hain.
       if member.status not in ["left", "kicked"]:
         return True
   except Exception as e:
     print(f"Subscription check error: {e}")
-  return False
-
-
-# Mazeed behtar tareeqay se check karne ke liye direct function jo image ke mutabiq exact message/alert de
-def verify_user_membership(user_id):
-  try:
-    member = bot.get_chat_member(CHANNEL_ID, user_id)
-    if member.status in ["member", "creator", "administrator", "restricted"]:
-      return True
-  except Exception as e:
-    print(f"Error checking membership: {e}")
   return False
 
 
@@ -2095,31 +2081,28 @@ def send_welcome(message):
   )
 
   if not verify_user_membership(user_id):
-    markup = types.InlineKeyboardMarkup(row_width=2)
+    markup = types.InlineKeyboardMarkup(row_width=1)
     btn_join = types.InlineKeyboardButton(
-        "📢 Join Channel", url=CHANNEL_INVITE_LINK
+        "📢 Join 😈☠️ M.K HACKER ☠️😈 Channel", url=CHANNEL_INVITE_LINK
     )
     btn_check = types.InlineKeyboardButton(
-        "✅ Confirm Join", callback_data="check_join"
+        "✅ Joined / Confirm", callback_data="check_join"
     )
     btn_contact = types.InlineKeyboardButton(
-        "💬 Contact Owner", url=OWNER_CONTACT
+        "💬 Contact Owner (😈☠️ M.K HACKER ☠️😈)", url=OWNER_CONTACT
     )
-    markup.add(btn_join, btn_check)
-    markup.add(btn_contact)
+    markup.add(btn_join, btn_check, btn_contact)
 
     bot.send_message(
         message.chat.id,
-        f"😈🚀 *M.K HACKER* 😈🚀\n\n"
-        f"🚀 *To use this bot, you must join our channel first!*\n\n"
-        f"👇 Pehle channel join karein, phir Confirm Join par click karein:",
+        f"👋 *Hello M.K TRADER!*\n\n"
+        f"To use this bot, you must join our official channel first. After joining, click '✅ Joined / Confirm' below!",
         reply_markup=markup,
         parse_mode="Markdown",
     )
     return
 
   show_main_menu(message.chat.id, user_name)
-
 
 
 @bot.callback_query_handler(func=lambda call: True)
@@ -2142,7 +2125,7 @@ def handle_callbacks(call):
     else:
       bot.answer_callback_query(
           call.id,
-          "❌ Aapne abhi tak channel join nahi kiya ya request pending hai!",
+          "❌ Aapne abhi tak channel join nahi kiya! Pehle join karein.",
           show_alert=True,
       )
 
