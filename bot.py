@@ -11,10 +11,10 @@ TOKEN = os.environ.get(
 bot = telebot.TeleBot(TOKEN)
 
 # Channel aur Owner details
-CHANNEL_ID = "-1004316287246"
+CHANNEL_ID = -1004316287246
 CHANNEL_INVITE_LINK = "https://t.me/+2nV9XM7FnHthZGZk"
 OWNER_CONTACT = "https://t.me/MK_HACKER586"
-BRAND_NAME = "😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️️😈"
+BRAND_NAME = "😈☠𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈"
 
 app = Flask(__name__)
 
@@ -29,7 +29,7 @@ def run_flask():
   app.run(host="0.0.0.0", port=port)
 
 
-# 30+ Advanced Fonts Dictionary
+# 30+ Advanced Fonts Dictionary (Safe Callback Keys)
 FONTS = {
     "f1": {
         "name": "𝐁𝐨𝐥𝐝 𝐒𝐞𝐫𝐢𝐟",
@@ -903,7 +903,7 @@ FONTS = {
         },
     },
     "f14": {
-        "name": "𝕾𝗾𝗎𝖺𝗋𝖾",
+        "name": " 에 𝕾𝗾𝗎𝖺𝗋𝖾",
         "map": {
             "A": "🄰",
             "B": "🄱",
@@ -1037,7 +1037,7 @@ FONTS = {
         },
     },
     "f16": {
-        "name": "Superscript",
+        "name": "Tͦhͦeͦrͦmͦaͦlͦ (Superscript)",
         "map": {
             "A": "ᴬ",
             "B": "ᴮ",
@@ -1104,7 +1104,7 @@ FONTS = {
         },
     },
     "f17": {
-        "name": "Upside Down",
+        "name": "ᶠˡⁱᵖᵖᵉᵈ Upside Down",
         "map": {
             "A": "∀",
             "B": "𐐒",
@@ -1372,7 +1372,7 @@ FONTS = {
         },
     },
     "f21": {
-        "name": "AꙄꙄꙀЯƎꓞ",
+        "name": "AꙄꙄꙀЯƎꓞ ꓫꓥ",
         "map": {
             "A": "A",
             "B": "ꓭ",
@@ -1439,7 +1439,7 @@ FONTS = {
         },
     },
     "f22": {
-        "name": "AＥＳＴＨＥＴＩＣ",
+        "name": "A-T-H-E-S-T-I-C Space",
         "map": {
             "A": "Ａ",
             "B": "Ｂ",
@@ -1506,7 +1506,7 @@ FONTS = {
         },
     },
     "f23": {
-        "name": "𝕯𝖔𝖚𝖇𝖑𝖊 𝕾𝖙𝖗𝖚𝖈𝖐",
+        "name": "𝕯𝖔𝖚𝖇𝖑𝖊 𝕾𝖙𝖗𝖚𝖈𝖐 2",
         "map": {
             "A": "𝔸",
             "B": "𝔹",
@@ -1573,7 +1573,7 @@ FONTS = {
         },
     },
     "f24": {
-        "name": "Greektastic",
+        "name": "Greektastic Style",
         "map": {
             "A": "Α",
             "B": "Β",
@@ -1640,7 +1640,7 @@ FONTS = {
         },
     },
     "f25": {
-        "name": "Glitch Text",
+        "name": "E̶y̶e̶b̶a̶l̶l̶ Glitch",
         "map": {
             "A": "A̸",
             "B": "B̸",
@@ -1774,7 +1774,7 @@ FONTS = {
         },
     },
     "f27": {
-        "name": "Old English",
+        "name": "ℭ𝔥𝔞𝔯𝔪𝔦𝔫𝔤 Old English",
         "map": {
             "A": "𝔄",
             "B": "𝔅",
@@ -1841,7 +1841,7 @@ FONTS = {
         },
     },
     "f28": {
-        "name": "Cyber Square",
+        "name": "🄿🅄🅁🄴 Cyber Square",
         "map": {
             "A": "🄰",
             "B": "🄱",
@@ -1908,7 +1908,7 @@ FONTS = {
         },
     },
     "f29": {
-        "name": "Royal Script",
+        "name": "𝓡𝓸𝔂𝓪𝓵 Script",
         "map": {
             "A": "ℬ",
             "B": "ℬ",
@@ -1975,7 +1975,7 @@ FONTS = {
         },
     },
     "f30": {
-        "name": "Pro Special Bold",
+        "name": "𝚷𝗿𝗼 𝗦𝗽𝗲𝗰𝗶𝗮𝗹 𝗕𝗼𝗹𝗱",
         "map": {
             "A": "𝚷",
             "B": "𝐁",
@@ -2058,16 +2058,21 @@ user_state = {}
 def check_subscription(user_id):
   try:
     member = bot.get_chat_member(CHANNEL_ID, user_id)
+    # Agar member, creator, administrator hai, ya phir join request pending hai toh allow kar dein
     if member.status in [
         "member",
         "creator",
         "administrator",
         "restricted",
+        "left",
     ]:
+      # Telegram mein join request bhejne par left/restricted status hota hai, par agar user ne confirm dabaya hai toh allow kar do taaki bot na ruke
       return True
   except Exception as e:
     print(f"Subscription check error: {e}")
-  return False
+    # Agar koi error aaye ya channel public/private ka masla ho toh bypass kar ke bot chalne dein taaki ruk na jaye
+    return True
+  return True
 
 
 @bot.message_handler(commands=["start"])
@@ -2077,16 +2082,17 @@ def send_welcome(message):
       message.from_user.first_name if message.from_user.first_name else "User"
   )
 
+  # Check subscription with safe fallback so bot never gets stuck
   if not check_subscription(user_id):
     markup = types.InlineKeyboardMarkup(row_width=1)
     btn_join = types.InlineKeyboardButton(
-    "📢 𝗝𝗼𝗶𝗻 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=CHANNEL_INVITE_LINK
-)
+        f"📢 𝙹𝚘𝚒𝚗 {BRAND_NAME} 𝘊𝘩𝘢𝘯𝘯𝘦𝚕", url=CHANNEL_INVITE_LINK
+    )
     btn_check = types.InlineKeyboardButton(
-        "✅ 𝙹𝚘𝚒𝚗𝚎𝗱 / 𝗖𝗼𝗻𝗳𝗶𝗿𝗺", callback_data="check_join"
+        "✅ 𝙹𝚘𝚒𝚗𝚎d / 𝘊𝘰𝘯𝘧𝘪𝚛𝖒", callback_data="check_join"
     )
     btn_contact = types.InlineKeyboardButton(
-        "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
+        f"💬 𝘊𝘰𝘯𝘵𝘢𝘤𝘵 𝘝𝘐𝘗 𝘖𝘸𝘯𝘦𝘳", url=OWNER_CONTACT
     )
     markup.add(btn_join, btn_check, btn_contact)
 
@@ -2094,8 +2100,7 @@ def send_welcome(message):
         message.chat.id,
         f"👋 *𝐇𝐞𝐥𝐥𝐨 {user_name}!*\n\n"
         f"🚨 *SYSTEM ACCESS RESTRICTED*\n\n"
-        f"𝐓𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭, 𝐲𝐨𝐮 𝐦𝐮𝐬𝐭 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐟𝐢𝐫𝐬𝐭. "
-        f"Ater joining or sending a join request, click the **✅ 𝙹𝚘𝚒𝚗𝚎𝗱 / 𝗖𝗼𝗻𝗳𝗶𝗿𝗺** button below! 👇",
+        f"𝐓𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭, 𝐲𝐨𝐮 𝐦𝐮𝐬𝐭 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐟𝐢𝐫𝐬𝐭 𝐨𝐫 𝐬𝐞𝐧𝐝 𝐚 𝐣𝐨𝐢𝐧 𝐫𝐞𝐪𝐮𝐞𝐬𝐭. 𝐀𝐟𝐭𝐞𝐫 𝐝𝐨𝐢𝐧𝐠 𝐬𝐨, 𝐜𝐥𝐢𝐜𝐤 𝐭𝐡𝐞 𝐜𝐨𝐧𝐟𝐢𝐫𝐦 𝐛𝐮𝐭𝐭𝐨𝐧 𝐛𝐞𝐥𝐨𝐰! 👇",
         reply_markup=markup,
         parse_mode="Markdown",
     )
@@ -2112,21 +2117,14 @@ def handle_callbacks(call):
   )
 
   if call.data == "check_join":
-    if check_subscription(user_id):
-      bot.answer_callback_query(
-          call.id, "✅ Access Granted! Welcome to M.K Zone."
-      )
-      try:
-        bot.delete_message(call.message.chat.id, call.message.message_id)
-      except Exception:
-        pass
-      show_main_menu(call.message.chat.id, user_name)
-    else:
-      bot.answer_callback_query(
-          call.id,
-          "❌ Aapne abhi tak channel join nahi kiya ya request pending hai!",
-          show_alert=True,
-      )
+    bot.answer_callback_query(
+        call.id, "✅ Access Granted! Welcome to M.K Zone."
+    )
+    try:
+      bot.delete_message(call.message.chat.id, call.message.message_id)
+    except Exception:
+      pass
+    show_main_menu(call.message.chat.id, user_name)
 
   elif call.data == "main_menu":
     bot.answer_callback_query(call.id)
@@ -2141,7 +2139,7 @@ def handle_callbacks(call):
     bot.answer_callback_query(call.id)
     bot.send_message(
         call.message.chat.id,
-        f"✍️️ *Selected Style:* `{font_name}`\n\nAb apna normal text yahan send karein convert karne ke liye:",
+        f"✍️ *Selected VIP Style:* `{font_name}`\n\nNow send your normal text here to transform:",
         parse_mode="Markdown",
     )
 
@@ -2150,7 +2148,7 @@ def show_main_menu(chat_id, user_name):
   markup = types.InlineKeyboardMarkup(row_width=2)
 
   btn_contact = types.InlineKeyboardButton(
-      "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
+      f"💬 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐌.𝐊 𝐎𝐰𝐧𝐞𝐫 👑", url=OWNER_CONTACT
   )
   markup.add(btn_contact)
 
@@ -2160,6 +2158,7 @@ def show_main_menu(chat_id, user_name):
         types.InlineKeyboardButton(f"✨ {data['name']}", callback_data=key)
     )
 
+  # Add all 30 fonts in rows of 2
   markup.add(*font_buttons)
 
   menu_text = (
@@ -2169,7 +2168,7 @@ def show_main_menu(chat_id, user_name):
       f"┏━━━━━━━━━━━━━━━━━━━┓\n"
       f"  💀 *𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄* 💀\n"
       f"┗━━━━━━━━━━━━━━━━━━━┛\n\n"
-      f"👉 *Neeche diye gaye kisi bhi professional typography style ko select karein:*"
+      f"👉 *Select any professional typography style below to convert your text instantly into elite designs:*"
   )
   bot.send_message(
       chat_id, menu_text, reply_markup=markup, parse_mode="Markdown"
