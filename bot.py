@@ -14,7 +14,7 @@ bot = telebot.TeleBot(TOKEN)
 CHANNEL_ID = "-1004404606781"
 CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
 OWNER_CONTACT = "https://t.me/MK_HACKER586"
-BRAND_NAME = "😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈"
+BRAND_NAME = "😈☠️𝗠.𝗞 HACKER☠️😈"
 
 app = Flask(__name__)
 
@@ -1458,7 +1458,7 @@ FONTS = {
             "O": "Ｏ",
             "P": "Ｐ",
             "Q": "Ｑ",
-            "R": "Ｒ",
+            "R": "𝑅",
             "S": "Ｓ",
             "T": "Ｔ",
             "U": "Ｕ",
@@ -2142,7 +2142,7 @@ def show_main_menu(chat_id, user_name):
   markup = types.InlineKeyboardMarkup(row_width=2)
 
   btn_contact = types.InlineKeyboardButton(
-      "💬 Contact Owner", url=OWNER_CONTACT
+      "💬 😈☠️ M.K HACKER ☠️😈 OWNER", url=OWNER_CONTACT
   )
   markup.add(btn_contact)
 
@@ -2155,13 +2155,13 @@ def show_main_menu(chat_id, user_name):
   markup.add(*font_buttons)
 
   menu_text = (
-      f"⚡️ 😈☠️M.K HACKER☠️😈 ⚡️\n"
-      f"👑 **VIP FONT GENERATOR PRO** 👑\n\n"
-      f"🔥 Welcome back, 😈☠️M.K HACKER☠️😈 🔥\n\n"
-      f"┌─────────────────────────┐\n"
-      f"  💀 **SYSTEM STATUS: ONLINE** 💀\n"
-      f"└─────────────────────────┘\n\n"
-      f"👉 Neeche diye gaye kisi bhi professional typography style ko select karein:"
+      "⚡️ 😈☠️𝗠.𝗞 HACKER☠️😈 ⚡️\n"
+      "👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
+      "𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, 😈☠️𝗠.𝗞 HACKER☠️😈 🔥\n\n"
+      "┏━━━━━━━━━━━━━━━━━━━┓\n"
+      "  💀 𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄 💀\n"
+      "┗━━━━━━━━━━━━━━━━━━━┛\n\n"
+      "👉 Neeche diye gaye kisi bhi professional typography style ko select karein:"
   )
   bot.send_message(
       chat_id, menu_text, reply_markup=markup, parse_mode="Markdown"
