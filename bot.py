@@ -10,9 +10,9 @@ TOKEN = os.environ.get(
 )
 bot = telebot.TeleBot(TOKEN)
 
-# Channel aur Owner details
-CHANNEL_ID = "-1004316287246"
-CHANNEL_INVITE_LINK = "https://t.me/+2nV9XM7FnHthZGZk"
+# Channel aur Owner details (Updated)
+CHANNEL_ID = "-1004404606781"
+CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
 OWNER_CONTACT = "https://t.me/MK_HACKER586"
 BRAND_NAME = "😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈"
 
@@ -1463,7 +1463,7 @@ FONTS = {
             "T": "Ｔ",
             "U": "Ｕ",
             "V": "Ｖ",
-            "W": "Ｗ",
+            "W": "𝑊",
             "X": "Ｘ",
             "Y": "Ｙ",
             "Z": "Ｚ",
@@ -1707,7 +1707,7 @@ FONTS = {
         },
     },
     "f26": {
-        "name": "𝕯𝖆𝖗𝖐 𝕬𝖓𝖌𝖊𝖑",
+        "name": "𝕯𝖆𝖗𝖐 𝕬𝖓𝙌𝖊𝖑",
         "map": {
             "A": "𝕬",
             "B": "𝕭",
@@ -2058,7 +2058,6 @@ user_state = {}
 def verify_user_membership(user_id):
   try:
     member = bot.get_chat_member(CHANNEL_ID, user_id)
-    # Agar user member, creator, ya admin hai toh True return karega
     if member.status in ["member", "creator", "administrator", "restricted"]:
       return True
   except Exception as e:
@@ -2156,8 +2155,12 @@ def show_main_menu(chat_id, user_name):
   markup.add(*font_buttons)
 
   menu_text = (
-      f"😈☠️ *M.K HACKER FONT'S BOT* ☠️😈\n\n"
-      f"👋 *Hello {user_name}!*\n\n"
+      f"⚡️ 😈☠️M.K HACKER☠️😈 ⚡️\n"
+      f"👑 **VIP FONT GENERATOR PRO** 👑\n\n"
+      f"🔥 Welcome back, 😈☠️M.K HACKER☠️😈 🔥\n\n"
+      f"┌─────────────────────────┐\n"
+      f"  💀 **SYSTEM STATUS: ONLINE** 💀\n"
+      f"└─────────────────────────┘\n\n"
       f"👉 Neeche diye gaye kisi bhi professional typography style ko select karein:"
   )
   bot.send_message(
