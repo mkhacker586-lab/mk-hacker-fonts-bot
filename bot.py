@@ -568,7 +568,7 @@ FONTS = {
         },
     },
     "f9": {
-        "name": "𝕭𝖔𝖑𝖉 𝕲𝖔𝖙𝖍𝖎𝖠",
+        "name": "𝕭𝖔𝖑𝖉 𝕲𝖔𝖙𝖍𝖎ꓮ",
         "map": {
             "A": "𝕬",
             "B": "𝕭",
@@ -594,7 +594,7 @@ FONTS = {
             "V": "𝖁",
             "W": "𝖂",
             "X": "𝖃",
-            "Y": "𝖄",
+            "Y": "𝕄",
             "Z": "𝖅",
             "a": "𝖆",
             "b": "𝖇",
@@ -1733,7 +1733,7 @@ FONTS = {
             "V": "𝖁",
             "W": "𝖂",
             "X": "𝖃",
-            "Y": "𝖄",
+            "Y": "𝕄",
             "Z": "𝖅",
             "a": "𝖆",
             "b": "𝖇",
@@ -2058,16 +2058,9 @@ user_state = {}
 def verify_user_membership(user_id):
   try:
     member = bot.get_chat_member(CHANNEL_ID, user_id)
-    # Agar user member hai, creator hai, admin hai, ya restricted hai toh access mil jayega
-    if member.status in [
-        "member",
-        "creator",
-        "administrator",
-        "restricted",
-        "left",
-    ]:
-      if member.status not in ["left", "kicked"]:
-        return True
+    # Agar user member, creator, ya admin hai toh True return karega
+    if member.status in ["member", "creator", "administrator", "restricted"]:
+      return True
   except Exception as e:
     print(f"Subscription check error: {e}")
   return False
@@ -2095,8 +2088,9 @@ def send_welcome(message):
 
     bot.send_message(
         message.chat.id,
-        f"👋 *Hello M.K TRADER!*\n\n"
-        f"To use this bot, you must join our official channel first. After joining, click '✅ Joined / Confirm' below!",
+        f"👋 *Hello {user_name}!*\n\n"
+        f"🚀 To use this bot, you must join our channel first!\n\n"
+        f"👇 Pehle channel join karein, phir Confirm Join par click karein:",
         reply_markup=markup,
         parse_mode="Markdown",
     )
@@ -2114,9 +2108,7 @@ def handle_callbacks(call):
 
   if call.data == "check_join":
     if verify_user_membership(user_id):
-      bot.answer_callback_query(
-          call.id, "✅ Access Granted! Welcome to M.K Zone."
-      )
+      bot.answer_callback_query(call.id, "✅ Access Granted! Welcome.")
       try:
         bot.delete_message(call.message.chat.id, call.message.message_id)
       except Exception:
@@ -2151,7 +2143,7 @@ def show_main_menu(chat_id, user_name):
   markup = types.InlineKeyboardMarkup(row_width=2)
 
   btn_contact = types.InlineKeyboardButton(
-      "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
+      "💬 Contact Owner", url=OWNER_CONTACT
   )
   markup.add(btn_contact)
 
@@ -2164,13 +2156,9 @@ def show_main_menu(chat_id, user_name):
   markup.add(*font_buttons)
 
   menu_text = (
-      f"⚡️ *{BRAND_NAME}* ⚡️\n"
-      f"👑 *𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎* 👑\n\n"
-      f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, *{user_name}* 🔥\n\n"
-      f"┏━━━━━━━━━━━━━━━━━━━┓\n"
-      f"  💀 *𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄* 💀\n"
-      f"┗━━━━━━━━━━━━━━━━━━━┛\n\n"
-      f"👉 *Neeche diye gaye kisi bhi professional typography style ko select karein:*"
+      f"😈☠️ *M.K HACKER FONT'S BOT* ☠️😈\n\n"
+      f"👋 *Hello {user_name}!*\n\n"
+      f"👉 Neeche diye gaye kisi bhi professional typography style ko select karein:"
   )
   bot.send_message(
       chat_id, menu_text, reply_markup=markup, parse_mode="Markdown"
@@ -2197,7 +2185,7 @@ def generate_font_text(message):
 
   markup = types.InlineKeyboardMarkup()
   btn_back = types.InlineKeyboardButton(
-      "🔙 𝘽𝙖𝙘𝙠 𝙩𝙤 𝘼𝙡𝙡 30+ 𝐅𝐨𝐧𝐭𝐬 𝐌𝐞𝐧𝐮", callback_data="main_menu"
+      "🔙 Back to All Fonts Menu", callback_data="main_menu"
   )
   markup.add(btn_back)
 
@@ -2214,5 +2202,5 @@ def generate_font_text(message):
 if __name__ == "__main__":
   t = threading.Thread(target=run_flask)
   t.start()
-  print("😈☠️ M.K HACKER Pro Font Bot 30+ is running smoothly!")
+  print("😈☠️ M.K HACKER Pro Font Bot is running smoothly!")
   bot.infinity_polling()
