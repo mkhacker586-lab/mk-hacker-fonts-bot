@@ -14,7 +14,7 @@ bot = telebot.TeleBot(TOKEN)
 CHANNEL_ID = "-1004316287246"
 CHANNEL_INVITE_LINK = "https://t.me/+2nV9XM7FnHthZGZk"
 OWNER_CONTACT = "https://t.me/MK_HACKER586"
-BRAND_NAME = "😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈"
+BRAND_NAME = "😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️️😈"
 
 app = Flask(__name__)
 
@@ -568,7 +568,7 @@ FONTS = {
         },
     },
     "f9": {
-        "name": "𝕭𝖔𝖑𝖉 𝕲𝖔𝖙𝖍𝖎𝖠",
+        "name": "𝕭𝖔𝖑𝖉 𝕲𝖔𝖙𝖍𝖎𝖈",
         "map": {
             "A": "𝕬",
             "B": "𝕭",
@@ -1750,7 +1750,7 @@ FONTS = {
             "m": "𝖒",
             "n": "𝖓",
             "o": "𝖔",
-            "p": "𝕻",
+            "p": "𝖕",
             "q": "𝖖",
             "r": "𝖗",
             "s": "𝖘",
@@ -2058,32 +2058,15 @@ user_state = {}
 def check_subscription(user_id):
   try:
     member = bot.get_chat_member(CHANNEL_ID, user_id)
-    # Agar user channel ka member, creator, admin ya restricted hai, ya phir join request bhej rakhi hai (left/kicked nahi hai)
     if member.status in [
         "member",
         "creator",
         "administrator",
         "restricted",
-        "left",
     ]:
-      # Agar status 'left' ya 'kicked' nahi hai toh access granted maanege,
-      # Telegram API mein join request ke liye member status 'left' ya 'restricted' ho sakta hai,
-      # isliye hum try-except mein safety rakhte hain.
-      if member.status not in ["left", "kicked"]:
-        return True
-  except Exception as e:
-    print(f"Subscription check error: {e}")
-  return False
-
-
-# Mazeed behtar tareeqay se check karne ke liye direct function jo image ke mutabiq exact message/alert de
-def verify_user_membership(user_id):
-  try:
-    member = bot.get_chat_member(CHANNEL_ID, user_id)
-    if member.status in ["member", "creator", "administrator", "restricted"]:
       return True
   except Exception as e:
-    print(f"Error checking membership: {e}")
+    print(f"Subscription check error: {e}")
   return False
 
 
@@ -2094,25 +2077,25 @@ def send_welcome(message):
       message.from_user.first_name if message.from_user.first_name else "User"
   )
 
-  if not verify_user_membership(user_id):
-    markup = types.InlineKeyboardMarkup(row_width=2)
+  if not check_subscription(user_id):
+    markup = types.InlineKeyboardMarkup(row_width=1)
     btn_join = types.InlineKeyboardButton(
-        "📢 Join Channel", url=CHANNEL_INVITE_LINK
-    )
+    "📢 𝗝𝗼𝗶𝗻 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=CHANNEL_INVITE_LINK
+)
     btn_check = types.InlineKeyboardButton(
-        "✅ Confirm Join", callback_data="check_join"
+        "✅ 𝙹𝚘𝚒𝚗𝚎𝗱 / 𝗖𝗼𝗻𝗳𝗶𝗿𝗺", callback_data="check_join"
     )
     btn_contact = types.InlineKeyboardButton(
-        "💬 Contact Owner", url=OWNER_CONTACT
+        "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
     )
-    markup.add(btn_join, btn_check)
-    markup.add(btn_contact)
+    markup.add(btn_join, btn_check, btn_contact)
 
     bot.send_message(
         message.chat.id,
-        f"😈🚀 *M.K HACKER* 😈🚀\n\n"
-        f"🚀 *To use this bot, you must join our channel first!* span_3\n\n"
-        f"👇 Pehle channel join karein, phir Confirm Join par click karein:",
+        f"👋 *𝐇𝐞𝐥𝐥𝐨 {user_name}!*\n\n"
+        f"🚨 *SYSTEM ACCESS RESTRICTED*\n\n"
+        f"𝐓𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭, 𝐲𝐨𝐮 𝐦𝐮𝐬𝐭 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐟𝐢𝐫𝐬𝐭. "
+        f"Ater joining or sending a join request, click the **✅ 𝙹𝚘𝚒𝚗𝚎𝗱 / 𝗖𝗼𝗻𝗳𝗶𝗿𝗺** button below! 👇",
         reply_markup=markup,
         parse_mode="Markdown",
     )
@@ -2129,7 +2112,7 @@ def handle_callbacks(call):
   )
 
   if call.data == "check_join":
-    if verify_user_membership(user_id):
+    if check_subscription(user_id):
       bot.answer_callback_query(
           call.id, "✅ Access Granted! Welcome to M.K Zone."
       )
@@ -2158,7 +2141,7 @@ def handle_callbacks(call):
     bot.answer_callback_query(call.id)
     bot.send_message(
         call.message.chat.id,
-        f"✍ *Selected Style:* `{font_name}`\n\nAb apna normal text yahan send karein convert karne ke liye:",
+        f"✍️️ *Selected Style:* `{font_name}`\n\nAb apna normal text yahan send karein convert karne ke liye:",
         parse_mode="Markdown",
     )
 
