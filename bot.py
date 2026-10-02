@@ -2142,7 +2142,7 @@ def show_main_menu(chat_id, user_name):
   markup = types.InlineKeyboardMarkup(row_width=2)
 
   btn_contact = types.InlineKeyboardButton(
-      "💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT
+      "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
   )
   markup.add(btn_contact)
 
@@ -2157,7 +2157,7 @@ def show_main_menu(chat_id, user_name):
   menu_text = (
       f"⚡️ 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 ⚡️\n"
       f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
-      f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, 😈☠️{user_name}☠️️😈 🔥\n\n"
+      f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, {user_name} 🔥\n\n"
       f"┏━━━━━━━━━━━━━━━━━━━┓\n"
       f"  💀 𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄 💀\n"
       f"┗━━━━━━━━━━━━━━━━━━━┛\n\n"
