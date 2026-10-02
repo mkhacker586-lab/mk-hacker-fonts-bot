@@ -14,7 +14,7 @@ bot = telebot.TeleBot(TOKEN)
 CHANNEL_ID = "-1004404606781"
 CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
 OWNER_CONTACT = "https://t.me/MK_HACKER586"
-BRAND_NAME = "😈☠️𝗠.𝗞 HACKER☠️😈"
+BRAND_NAME = "😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈"
 
 app = Flask(__name__)
 
@@ -1458,7 +1458,7 @@ FONTS = {
             "O": "Ｏ",
             "P": "Ｐ",
             "Q": "Ｑ",
-            "R": "𝑅",
+            "R": "Ｒ",
             "S": "Ｓ",
             "T": "Ｔ",
             "U": "Ｕ",
@@ -2080,9 +2080,10 @@ def send_welcome(message):
     btn_check = types.InlineKeyboardButton(
         "✅ Joined / Confirm", callback_data="check_join"
     )
-    btn_contact = types.InlineKeyboardButton(
-        "💬 Contact Owner (😈☠️ M.K HACKER ☠️😈)", url=OWNER_CONTACT
+        btn_contact = types.InlineKeyboardButton(
+        "💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT
     )
+
     markup.add(btn_join, btn_check, btn_contact)
 
     bot.send_message(
@@ -2142,7 +2143,7 @@ def show_main_menu(chat_id, user_name):
   markup = types.InlineKeyboardMarkup(row_width=2)
 
   btn_contact = types.InlineKeyboardButton(
-      "💬 😈☠️ M.K HACKER ☠️😈 OWNER", url=OWNER_CONTACT
+      "💬 Contact Owner", url=OWNER_CONTACT
   )
   markup.add(btn_contact)
 
@@ -2154,15 +2155,16 @@ def show_main_menu(chat_id, user_name):
 
   markup.add(*font_buttons)
 
-  menu_text = (
-      "⚡️ 😈☠️𝗠.𝗞 HACKER☠️😈 ⚡️\n"
-      "👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
-      "𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, 😈☠️𝗠.𝗞 HACKER☠️😈 🔥\n\n"
-      "┏━━━━━━━━━━━━━━━━━━━┓\n"
-      "  💀 𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄 💀\n"
-      "┗━━━━━━━━━━━━━━━━━━━┛\n\n"
-      "👉 Neeche diye gaye kisi bhi professional typography style ko select karein:"
-  )
+      menu_text = (
+        f"⚡️ 😈☠️{user_name}☠️😈 ⚡️\n"
+        f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
+        f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, 😈☠️{user_name}☠️😈 🔥\n\n"
+        f"┏━━━━━━━━━━━━━━━━━━━┓\n"
+        f"  💀 𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄 💀\n"
+        f"┗━━━━━━━━━━━━━━━━━━━┛\n\n"
+        f"👉 Neeche diye gaye kisi bhi professional typography style ko select karein:"
+    )
+
   bot.send_message(
       chat_id, menu_text, reply_markup=markup, parse_mode="Markdown"
   )
