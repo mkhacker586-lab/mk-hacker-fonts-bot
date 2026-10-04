@@ -2075,7 +2075,7 @@ def send_welcome(message):
   if not verify_user_membership(user_id):
     markup = types.InlineKeyboardMarkup(row_width=1)
     btn_join = types.InlineKeyboardButton(
-        "📢 𝗝𝗼𝗶𝗻 😈☠️️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=CHANNEL_INVITE_LINK
+        "📢 𝗝𝗼𝗶𝗻 😈☠ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=CHANNEL_INVITE_LINK
     )
     btn_check = types.InlineKeyboardButton(
         "✅ 𝗝𝗼𝗶𝗻 / 𝗖𝗼𝗻𝗳𝗶𝗿𝗺", callback_data="check_join"
@@ -2085,9 +2085,9 @@ def send_welcome(message):
     )
     markup.add(btn_join, btn_check, btn_contact)
 
-bot.send_message(
-    message.chat.id,
-    f"""👋 𝐇𝐞𝐥𝐥𝐨 {user_name}!
+    bot.send_message(
+        message.chat.id,
+        f"""👋 𝐇𝐞𝐥𝐥𝐨 {user_name}!
 
 🚨 𝐒𝐘𝐒𝐓𝐄𝐌 𝐀𝐂𝐂𝐄𝐒𝐒 𝐑𝐄𝐒𝐓𝐑𝐈𝐂𝐓𝐄𝐃
 
@@ -2108,10 +2108,9 @@ bot.send_message(
 🔓 𝐔𝐍𝐋𝐎𝐂𝐊 𝐁𝐎𝐓 𝐀𝐂𝐂𝐄𝐒𝐒
 
 ━━━━━━━━━━━━━━━━━━""",
-    reply_markup=markup,
-    parse_mode="Markdown",
-)
-
+        reply_markup=markup,
+        parse_mode="Markdown",
+    )
     return
 
   show_main_menu(message.chat.id, user_name)
@@ -2174,23 +2173,23 @@ def show_main_menu(chat_id, user_name):
   markup.add(*font_buttons)
 
   menu_text = (
-    f"⚡️ 😈☠️️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
-    f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
-    f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
-    f"🔥 𝐘𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐓𝐲𝐩𝐨𝐠𝐫𝐚𝐩𝐡𝐲 𝐒𝐭𝐚𝐭𝐢𝐨𝐧 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
-    f"┏━━━━━━━━━━━━━━━━━━━┓\n"
-    f"  💀 𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 🟢 𝐎𝐍𝐋𝐈𝐍𝐄\n"
-    f"  ⚡ 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏 𝐏𝐑𝐎\n"
-    f"  👑 𝐀𝐂𝐂𝐄𝐒𝐒: 𝐀𝐂𝐓𝐈𝐕𝐄\n"
-    f"┗━━━━━━━━━━━━━━━━━━━┛\n\n"
-    f"🎨 𝐂𝐑𝐄𝐀𝐓𝐄 𝐘𝐎𝐔𝐑 𝐎𝐖𝐍 𝐒𝐓𝐘𝐋𝐄\n"
-    f"━━━━━━━━━━━━━━━━━━━\n"
-    f"✨ 𝐂𝐡𝐨𝐨𝐬𝐞 𝐚 𝐩𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐭𝐲𝐩𝐨𝐠𝐫𝐚𝐩𝐡𝐲 𝐬𝐭𝐲𝐥𝐞 𝐛𝐞𝐥𝐨𝐰.\n"
-    f"💎 𝐂𝐨𝐧𝐯𝐞𝐫𝐭 𝐲𝐨𝐮𝐫 𝐭𝐞𝐱𝐭 𝐢𝐧𝐭𝐨 𝐬𝐭𝐲𝐥𝐢𝐬𝐡 𝐕𝐈𝐏 𝐟𝐨𝐧𝐭𝐬.\n"
-    f"🚀 𝐅𝐚𝐬𝐭 • 𝐒𝐦𝐨𝐨𝐭𝐡 • 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥\n\n"
-    f"👇 𝐒𝐄𝐋𝐄𝐂𝐓 𝐘𝐎𝐔𝐑 𝐏𝐑𝐄𝐅𝐄𝐑𝐑𝐄𝐃 𝐅𝐎𝐍𝐓 𝐒𝐓𝐘𝐋𝐄 👇\n\n"
-    f"☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 — 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐓𝐘𝐏𝐎𝐆𝐑𝐀𝐏𝐇𝐘 ☠️"
-)
+      f"⚡️ 😈☠ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
+      f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
+      f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
+      f"🔥 𝐘𝐨𝐮𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐓𝐲𝐩𝐨𝐠𝐫𝐚𝐩𝐡𝐲 𝐒𝐭𝐚𝐭𝐢𝐨𝐧 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
+      f"┏━━━━━━━━━━━━━━━━━━━┓\n"
+      f"  💀 𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 🟢 𝐎𝐍𝐋𝐈𝐍𝐄\n"
+      f"  ⚡ 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏 𝐏𝐑𝐎\n"
+      f"  👑 𝐀𝐂𝐂𝐄𝐒𝐒: 𝐀𝐂𝐓𝐈𝐕𝐄\n"
+      f"┗━━━━━━━━━━━━━━━━━━━┛\n\n"
+      f"🎨 𝐂𝐑𝐄𝐀𝐓𝐄 𝐘𝐎𝐔𝐑 𝐎𝐖𝐍 𝐒𝐓𝐘𝐋𝐄\n"
+      f"━━━━━━━━━━━━━━━━━━━\n"
+      f"✨ 𝐂𝐡𝐨𝐨𝐬𝐞 𝐚 𝐩𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐭𝐲𝐩𝐨𝐠𝐫𝐚𝐩𝐡𝐲 𝐬𝐭𝐲𝐥𝐞 𝐛𝐞𝐥𝐨𝐰.\n"
+      f"💎 𝐂𝐨𝐧𝐯𝐞𝐫𝐭 𝐲𝐨𝐮𝐫 𝐭𝐞𝐱𝐭 𝐢𝐧𝐭𝐨 𝐬𝐭𝐲𝐥𝐢𝐬𝐡 𝐕𝐈𝐏 𝐟𝐨𝐧𝐭𝐬.\n"
+      f"🚀 𝐅𝐚𝐬𝐭 • 𝐒𝐦𝐨𝐨𝐭𝐡 • 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥\n\n"
+      f"👇 𝐒𝐄𝐋𝐄𝐂𝐓 𝐘𝐎𝐔𝐑 𝐏𝐑𝐄𝐅𝐄𝐑𝐑𝐄𝐃 𝐅𝐎𝐍𝐓 𝐒𝐓𝐘𝐋𝐄 👇\n\n"
+      f"☠️ 𝐌.𝐊 𝐇𝐀𝗖𝐊𝐄𝗥 — 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐓𝐘𝐏𝐎𝐆𝐑𝐀𝐏𝐇𝐘 ☠️"
+  )
 
   bot.send_message(
       chat_id, menu_text, reply_markup=markup, parse_mode="Markdown"
