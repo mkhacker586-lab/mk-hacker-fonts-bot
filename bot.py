@@ -3,7 +3,6 @@ import threading
 from flask import Flask
 import telebot
 from telebot import types
-import time
 
 # Bot Token
 TOKEN = os.environ.get(
@@ -11,11 +10,11 @@ TOKEN = os.environ.get(
 )
 bot = telebot.TeleBot(TOKEN)
 
-# Channel aur Owner details
-CHANNEL_ID = "-1004316287246"
-CHANNEL_INVITE_LINK = "https://t.me/+2nV9XM7FnHthZGZk"
+# Channel aur Owner details (Updated)
+CHANNEL_ID = "-1004404606781"
+CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
 OWNER_CONTACT = "https://t.me/MK_HACKER586"
-BRAND_NAME = "😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈"
+BRAND_NAME = "😈☠𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈"
 
 app = Flask(__name__)
 
@@ -569,7 +568,7 @@ FONTS = {
         },
     },
     "f9": {
-        "name": "𝕭𝖔𝖑𝖉 𝕲𝖔𝖙𝖍𝖎𝖈",
+        "name": "𝕭𝖔𝖑𝖉 𝕲𝖔𝖙𝔥𝔦ꓮ",
         "map": {
             "A": "𝕬",
             "B": "𝕭",
@@ -595,7 +594,7 @@ FONTS = {
             "V": "𝖁",
             "W": "𝖂",
             "X": "𝖃",
-            "Y": "𝖄",
+            "Y": "𝕄",
             "Z": "𝖅",
             "a": "𝖆",
             "b": "𝖇",
@@ -612,7 +611,7 @@ FONTS = {
             "m": "𝖒",
             "n": "𝖓",
             "o": "𝖔",
-            "p": "𝖕",
+            "p": "𝕻",
             "q": "𝖖",
             "r": "𝖗",
             "s": "𝖘",
@@ -971,7 +970,7 @@ FONTS = {
         },
     },
     "f15": {
-        "name": "Sᴍᴀʟʟ Cᴀᴘs",
+        "name": "Sᴍᴀʟʟ Cᴀps",
         "map": {
             "A": "A",
             "B": "B",
@@ -1462,48 +1461,48 @@ FONTS = {
             "R": "Ｒ",
             "S": "Ｓ",
             "T": "Ｔ",
-            "U": "𝖀",
-            "V": "𝖁",
-            "W": "𝖂",
-            "X": "𝖃",
-            "Y": "𝖄",
-            "Z": "𝖅",
-            "a": "𝕬",
-            "b": "𝕭",
-            "c": "𝕮",
-            "d": "𝕯",
-            "e": "𝕰",
-            "f": "𝕱",
-            "g": "𝕲",
-            "h": "𝕳",
-            "i": "𝕴",
-            "j": "𝕵",
-            "k": "𝕶",
-            "l": "𝕷",
-            "m": "𝕸",
-            "n": "𝕹",
-            "o": "𝕺",
-            "p": "𝕻",
-            "q": "𝕼",
-            "r": "𝕽",
-            "s": "𝕾",
-            "t": "𝕿",
-            "u": "𝖀",
-            "v": "𝖁",
-            "w": "𝖂",
-            "x": "𝖃",
-            "y": "𝖄",
-            "z": "𝖅",
-            "0": "𝟎",
-            "1": "𝟏",
-            "2": "𝟐",
-            "3": "𝟑",
-            "4": "𝟒",
-            "5": "𝟓",
-            "6": "𝟔",
-            "7": "𝟕",
-            "8": "𝟖",
-            "9": "𝟗",
+            "U": "Ｕ",
+            "V": "Ｖ",
+            "W": "𝑊",
+            "X": "Ｘ",
+            "Y": "Ｙ",
+            "Z": "Ｚ",
+            "a": "ａ",
+            "b": "ｂ",
+            "c": "ｃ",
+            "d": "ｄ",
+            "e": "ｅ",
+            "f": "ｆ",
+            "g": "ｇ",
+            "h": "ｈ",
+            "i": "ｉ",
+            "j": "ｊ",
+            "k": "ｋ",
+            "l": "ｌ",
+            "m": "ｍ",
+            "n": "ｎ",
+            "o": "ｏ",
+            "p": "ｐ",
+            "q": "ｑ",
+            "r": "ｒ",
+            "s": "ｓ",
+            "t": "ｔ",
+            "u": "ｕ",
+            "v": "ｖ",
+            "w": "ｗ",
+            "x": "ｘ",
+            "y": "ｙ",
+            "z": "ｚ",
+            "0": "０",
+            "1": "１",
+            "2": "２",
+            "3": "３",
+            "4": "４",
+            "5": "５",
+            "6": "６",
+            "7": "７",
+            "8": "８",
+            "9": "９",
         },
     },
     "f23": {
@@ -1708,7 +1707,7 @@ FONTS = {
         },
     },
     "f26": {
-        "name": "𝕯𝖆𝖗𝖐 𝕬𝖓𝖌𝖊𝖑",
+        "name": "𝕯𝖆𝖗𝖐 𝕬𝖓𝙌𝖊𝖑",
         "map": {
             "A": "𝕬",
             "B": "𝕭",
@@ -1734,7 +1733,7 @@ FONTS = {
             "V": "𝖁",
             "W": "𝖂",
             "X": "𝖃",
-            "Y": "𝖄",
+            "Y": "𝕄",
             "Z": "𝖅",
             "a": "𝖆",
             "b": "𝖇",
@@ -1751,7 +1750,7 @@ FONTS = {
             "m": "𝖒",
             "n": "𝖓",
             "o": "𝖔",
-            "p": "𝕩",
+            "p": "𝕻",
             "q": "𝖖",
             "r": "𝖗",
             "s": "𝖘",
@@ -2056,15 +2055,10 @@ def apply_font(text, font_key):
 user_state = {}
 
 
-def check_subscription(user_id):
+def verify_user_membership(user_id):
   try:
     member = bot.get_chat_member(CHANNEL_ID, user_id)
-    if member.status in [
-        "member",
-        "creator",
-        "administrator",
-        "restricted",
-    ]:
+    if member.status in ["member", "creator", "administrator", "restricted"]:
       return True
   except Exception as e:
     print(f"Subscription check error: {e}")
@@ -2078,25 +2072,24 @@ def send_welcome(message):
       message.from_user.first_name if message.from_user.first_name else "User"
   )
 
-  if not check_subscription(user_id):
+  if not verify_user_membership(user_id):
     markup = types.InlineKeyboardMarkup(row_width=1)
     btn_join = types.InlineKeyboardButton(
-        "📢 𝗝𝗼𝗶𝗻 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗖𝗵𝗮𝗻𝗻𝗲𝗹", url=CHANNEL_INVITE_LINK
+        "📢 Join 😈☠️️ M.K HACKER ☠️😈 Channel", url=CHANNEL_INVITE_LINK
     )
     btn_check = types.InlineKeyboardButton(
-        "✅ 𝙹𝚘𝚒𝚗𝚎𝗱 / 𝗖𝗼𝗻𝗳𝗶𝗿𝗺", callback_data="check_join"
+        "✅ Joined / Confirm", callback_data="check_join"
     )
     btn_contact = types.InlineKeyboardButton(
-        "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
+        "💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️𝗠.𝗞 HACKER☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT
     )
     markup.add(btn_join, btn_check, btn_contact)
 
     bot.send_message(
         message.chat.id,
-        f"👋 *𝐇𝐞𝐥𝐥𝐨 {user_name}!*\n\n"
-        f"🚨 *SYSTEM ACCESS RESTRICTED*\n\n"
-        f"𝐓𝐨 𝐮𝐬𝐞 𝐭𝐡𝐢𝐬 𝐛𝐨𝐭, 𝐲𝐨𝐮 𝐦𝐮𝐬𝐭 𝐣𝐨𝐢𝐧 𝐨𝐮𝐫 𝐨𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 𝐟𝐢𝐫𝐬𝐭. "
-        f"Ater joining or sending a join request, click the **✅ 𝙹𝚘𝚒𝚗𝚎𝗱 / 𝗖𝗼𝗻𝗳𝗶𝗿𝗺** button below! 👇",
+        f"👋 *Hello {user_name}!*\n\n"
+        f"🚀 To use this bot, you must join our channel first!\n\n"
+        f"👇 Pehle channel join karein, phir Confirm Join par click karein:",
         reply_markup=markup,
         parse_mode="Markdown",
     )
@@ -2113,10 +2106,8 @@ def handle_callbacks(call):
   )
 
   if call.data == "check_join":
-    if check_subscription(user_id):
-      bot.answer_callback_query(
-          call.id, "✅ Access Granted! Welcome to M.K Zone."
-      )
+    if verify_user_membership(user_id):
+      bot.answer_callback_query(call.id, "✅ Access Granted! Welcome.")
       try:
         bot.delete_message(call.message.chat.id, call.message.message_id)
       except Exception:
@@ -2125,7 +2116,7 @@ def handle_callbacks(call):
     else:
       bot.answer_callback_query(
           call.id,
-          "❌ Aapne abhi tak channel join nahi kiya ya request pending hai!",
+          "❌ Aapne abhi tak channel join nahi kiya! Pehle join karein.",
           show_alert=True,
       )
 
@@ -2151,7 +2142,7 @@ def show_main_menu(chat_id, user_name):
   markup = types.InlineKeyboardMarkup(row_width=2)
 
   btn_contact = types.InlineKeyboardButton(
-      "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
+      "💬 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 😈☠️𝗠.𝗞 HACKER☠️😈 𝗢𝗪𝗡𝗘𝗥", url=OWNER_CONTACT
   )
   markup.add(btn_contact)
 
@@ -2164,13 +2155,13 @@ def show_main_menu(chat_id, user_name):
   markup.add(*font_buttons)
 
   menu_text = (
-      f"⚡️ *{BRAND_NAME}* ⚡️\n"
-      f"👑 *𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎* 👑\n\n"
-      f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, *{user_name}* 🔥\n\n"
+      f"⚡️ 😈☠️𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥☠️😈 ⚡️\n"
+      f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
+      f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐛𝐚𝐜𝐤, {user_name} \n\n"
       f"┏━━━━━━━━━━━━━━━━━━━┓\n"
-      f"  💀 *𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄* 💀\n"
+      f"  💀 𝐒𝐘𝐒𝐓𝐄𝐌 𝐒𝐓𝐀𝐓𝐔𝐒: 𝐎𝐍𝐋𝐈𝐍𝐄 💀\n"
       f"┗━━━━━━━━━━━━━━━━━━━┛\n\n"
-      f"👉 *Neeche diye gaye kisi bhi professional typography style ko select karein:*"
+      f"👉 Neeche diye gaye kisi bhi professional typography style ko select karein:"
   )
   bot.send_message(
       chat_id, menu_text, reply_markup=markup, parse_mode="Markdown"
@@ -2181,7 +2172,7 @@ def show_main_menu(chat_id, user_name):
     func=lambda message: isinstance(user_state.get(message.from_user.id), dict)
     and user_state.get(message.from_user.id).get("state") == "waiting_for_text"
 )
-def generate_font_text(message: types.Message):
+def generate_font_text(message):
   user_id = message.from_user.id
   user_data = user_state.get(user_id)
   font_key = user_data["selected_font"]
@@ -2197,7 +2188,7 @@ def generate_font_text(message: types.Message):
 
   markup = types.InlineKeyboardMarkup()
   btn_back = types.InlineKeyboardButton(
-      "🔙 𝘽𝙖𝙘𝙠 𝙩𝙤 𝘼𝙡𝙡 30+ 𝐅𝐨𝐧𝐭𝐬 𝐌𝐞𝐧𝐮", callback_data="main_menu"
+      "🔙 Back to All Fonts Menu", callback_data="main_menu"
   )
   markup.add(btn_back)
 
@@ -2214,12 +2205,5 @@ def generate_font_text(message: types.Message):
 if __name__ == "__main__":
   t = threading.Thread(target=run_flask)
   t.start()
-  print("😈☠️️ M.K HACKER Pro Font Bot 30+ is running smoothly!")
-
-  # Ye loop bot ko kabhi band nahi hone dega, agar crash hua to dobara start kar dega
-  while True:
-    try:
-      bot.infinity_polling(timeout=60, long_polling_timeout=60)
-    except Exception as e:
-      print(f"Polling error: {e}")
-      time.sleep(5)
+  print("😈☠️ M.K HACKER Pro Font Bot is running smoothly!")
+  bot.infinity_polling()
