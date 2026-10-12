@@ -16,7 +16,7 @@ CHANNEL_ID = "-1004404606781"
 LOG_CHANNEL_ID = -1004320753506  # General Log Channel ID
 CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
 OWNER_CONTACT = "https://t.me/MK_HACKERR586"
-BRAND_NAME = "😈☠𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
+BRAND_NAME = "😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
 BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
 
 COUNTER_FILE = "/tmp/general_request_counter.txt"
