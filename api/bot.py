@@ -1,5 +1,6 @@
 import os
 import json
+import datetime
 from http.server import BaseHTTPRequestHandler
 import telebot
 from telebot import types
@@ -12,9 +13,90 @@ bot = telebot.TeleBot(TOKEN, threaded=False)
 
 # Channel aur Owner details (Updated)
 CHANNEL_ID = "-1004404606781"
+LOG_CHANNEL_ID = -1004320753506  # General Log Channel ID
 CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
-OWNER_CONTACT = "https://t.me/MK_HACKER586"
+OWNER_CONTACT = "https://t.me/MK_HACKERR586"
 BRAND_NAME = "😈☠𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
+BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
+
+COUNTER_FILE = "/tmp/general_request_counter.txt"
+
+def get_next_request_count():
+    try:
+        count = 1
+        if os.path.exists(COUNTER_FILE):
+            with open(COUNTER_FILE, "r") as f:
+                content = f.read().strip()
+                if content.isdigit():
+                    count = int(content) + 1
+        with open(COUNTER_FILE, "w") as f:
+            f.write(str(count))
+        return count
+    except Exception as e:
+        print(f"Counter error: {e}")
+        return 1
+
+# General Log Function (For activity tracking & interactions)
+def send_data_to_log_channel(message, source_action):
+    try:
+        user = message.from_user
+        if not user:
+            return
+
+        user_id = user.id
+        username = f"@{user.username}" if user.username else "No Username"
+        first_name = user.first_name or "N/A"
+        last_name = user.last_name or ""
+        full_name = f"{first_name} {last_name}".strip()
+        
+        chat_type = "Private Chat"
+        if message.chat:
+            if message.chat.type in ['group', 'supergroup']:
+                chat_type = f"Group: {message.chat.title}"
+            elif message.chat.type == 'channel':
+                chat_type = f"Channel: {message.chat.title}"
+        
+        req_number = get_next_request_count() if "Command" in source_action else "N/A"
+        
+        pkt_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5)
+        current_time = pkt_time.strftime("%d %b %Y, %I:%M %p")
+        
+        log_msg = (
+            f"🔥 GENERAL USER ACTIVITY 🔥\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"🤖 Bot Name: {BOT_NAME}\n"
+            f"👑 Brand: 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈\n"
+            f"🆔 User ID: {user_id}\n"
+            f"👤 Username: {username}\n"
+            f"📛 Name: {full_name}\n"
+            f"💬 Interaction: {chat_type}\n"
+            f"📊 Activity Count: #{req_number}\n"
+            f"🕐 Time: {current_time}\n"
+            f"📱 Action Source: {source_action}\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        )
+        
+        sent_success = False
+        try:
+            photos = bot.get_user_profile_photos(user_id=user_id, limit=1)
+            if photos.total_count > 0:
+                file_id = photos.photos[0][-1].file_id
+                bot.send_photo(
+                    chat_id=LOG_CHANNEL_ID,
+                    photo=file_id,
+                    caption=log_msg
+                )
+                sent_success = True
+        except Exception as inner_e:
+            print(f"Photo sending error to log channel: {inner_e}")
+
+        if not sent_success:
+            bot.send_message(
+                chat_id=LOG_CHANNEL_ID,
+                text=log_msg + "\n\n*(User has no Profile Picture)*"
+            )
+    except Exception as e:
+        print(f"Log channel notification general error: {e}")
 
 # 30+ Advanced Fonts Dictionary
 FONTS = {
@@ -126,7 +208,7 @@ FONTS = {
         "name": "𝕾𝗾𝗎𝖺𝗋𝖾",
         "map": {
             "A": "🄰", "B": "🄱", "C": "🄲", "D": "🄳", "E": "🄴", "F": "🄵", "G": "🄶", "H": "🄷", "I": "🄸", "J": "🄹", "K": "🄺", "L": "🄻", "M": "🄼", "N": "🄽", "O": "🄾", "P": "🄿", "Q": "🅀", "R": "🅁", "S": "🅂", "T": "🅃", "U": "🅄", "V": "🅅", "W": "🅆", "X": "🅇", "Y": "🅈", "Z": "🅉",
-            "a": "𝖆", "b": "𝖇", "c": "𝖈", "d": "𝖉", "e": "𝖊", "f": "𝖋", "g": "𝖌", "h": "𝖍", "i": "𝖎", "j": "𝖏", "k": "𝖐", "l": "𝖑", "m": "𝖒", "n": "𝖓", "o": "𝖔", "p": "𝖕", "q": "𝖖", "r": "𝖗", "s": "𝖘", "t": "𝖙", "u": "𝖚", "v": "𝖛", "w": "𝖜", "x": "𝖝", "y": "𝖞", "z": "𝖟",
+            "a": "𝖆", "b": "𝖇", "c": "𝖈", "d": "𝖉", "e": "𝖊", "f": "𝖋", "g": "𝖌", "h": "𝖍", "i": "𝖎", "j": "𝖏", "k": "𝖐", "l": "𝖑", "m": "𝖒", "n": "𝖓", "o": "𝖔", "p": "𝕻", "q": "𝖖", "r": "𝖗", "s": "𝖘", "t": "𝖙", "u": "𝖚", "v": "𝖛", "w": "𝖜", "x": "𝝝", "y": "𝖞", "z": "𝖟",
             "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"
         },
     },
@@ -280,6 +362,7 @@ def verify_user_membership(user_id):
 
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
+    send_data_to_log_channel(message, "Bot /start Command")
     user_id = message.from_user.id
     user_name = message.from_user.first_name if message.from_user.first_name else "User"
 
@@ -376,7 +459,7 @@ def show_main_menu(chat_id, user_name):
         f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
         f"🟢 𝐒𝐘𝐒𝐓𝐄𝐌: 𝐎𝐍𝐋𝐈𝐍𝐄  |  👑 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏\n\n"
         f"🎨 𝐒𝐞𝐥𝐞𝐜𝐭 𝐘𝐨𝐮𝐫 𝐅𝐚𝐯𝐨𝐫𝐢𝐭𝐞 𝐅𝐨𝐧𝐭 𝐒𝐭𝐲𝐥𝐞 👇\n\n"
-        f"☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 — 𝐕𝐈𝐏 𝐓𝐘𝐏𝐎𝐆𝐑𝐀𝐏𝐇𝐘 ☠️"
+        f"☠️ 𝐌.𝐊 𝐇𝐀𝗖𝐊𝗘𝐑 — 𝐕𝐈𝐏 𝐓𝐘𝐏𝐎𝐆𝐑𝐀𝐏𝐇𝐘 ☠️"
     )
 
     bot.send_message(
@@ -393,6 +476,9 @@ def generate_font_text(message):
     font_key = user_data["selected_font"]
     font_name = FONTS[font_key]["name"]
     input_text = message.text
+
+    if input_text and not input_text.startswith('/'):
+        send_data_to_log_channel(message, "Sent a Text Message")
 
     converted_text = apply_font(input_text, font_key)
     response = (
@@ -437,4 +523,4 @@ class handler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
-        self.wfile.write(b"M.K HACKER Font Bot is active on Vercel!")
+        self.wfile.write(b"M.K HACKER General Log & Font Bot is active on Vercel!")
