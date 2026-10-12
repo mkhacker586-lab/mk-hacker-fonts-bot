@@ -62,17 +62,17 @@ def send_data_to_log_channel(message, source_action):
         current_time = pkt_time.strftime("%d %b %Y, %I:%M %p")
         
         log_msg = (
-            f"🔥 GENERAL USER ACTIVITY 🔥\n"
+            f"🔥☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 — 𝐃𝐀𝐓𝐀 𝐋𝐎𝐆 𝐒𝐘𝐒𝐓𝐄𝐌 ☠️🔥\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🤖 Bot Name: {BOT_NAME}\n"
-            f"👑 Brand: 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈\n"
-            f"🆔 User ID: {user_id}\n"
-            f"👤 Username: {username}\n"
-            f"📛 Name: {full_name}\n"
-            f"💬 Interaction: {chat_type}\n"
-            f"📊 Activity Count: #{req_number}\n"
-            f"🕐 Time: {current_time}\n"
-            f"📱 Action Source: {source_action}\n"
+            f"🤖 𝐁𝐨𝐭 𝐍𝐚𝐦𝐞: `{BOT_NAME}`\n"
+            f"👑 𝐁𝐫𝐚𝐧𝐝: `😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈`\n"
+            f"🆔 𝐔𝐬𝐞𝐫 𝐈𝐃: `{user_id}`\n"
+            f"👤 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞: `{username}`\n"
+            f"📛 𝐍𝐚𝐦𝐞: `{full_name}`\n"
+            f"💬 𝐈𝐧𝐭𝐞𝐫𝐚𝐜𝐭𝐢𝐨𝐧: `{chat_type}`\n"
+            f"📊 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐲 𝐂𝐨𝐮𝐧𝐭: `#{req_number}`\n"
+            f"🕐 𝐓𝐢𝐦𝐞: `{current_time}`\n"
+            f"📱 𝐀𝐜𝐭𝐢𝐨𝐧 𝐒𝐨𝐮𝐫𝐜𝐞: `{source_action}`\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━"
         )
         
