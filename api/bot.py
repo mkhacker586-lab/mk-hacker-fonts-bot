@@ -17,7 +17,7 @@ bot = telebot.TeleBot(TOKEN, threaded=False)
 # ==========================================
 CHANNEL_ID = "-1004404606781"            # Jahan user ko join karna lazmi hai
 LOG_CHANNEL_ID = -1004320753506         # Jahan user ki logs report aaye gi
-BROADCAST_CHANNEL_ID = -1004322168174   # Broadcast Channel ID
+BROADCAST_CHANNEL_ID = -1004322168174   # 📢 Updated Broadcast Channel ID
 
 CHANNEL_INVITE_LINK = "https://t.me/realkhan_x"
 OWNER_CONTACT = "https://t.me/MK_TRADER586"
@@ -100,8 +100,18 @@ def get_all_users():
 
 init_db()
 
+# Set Bot Commands Menu (Left-Side Menu Bar)
+try:
+    bot.set_my_commands([
+        types.BotCommand("start", "Start the bot"),
+        types.BotCommand("channel", "Official Channel"),
+        types.BotCommand("contact", "Contact Owner")
+    ])
+except Exception as e:
+    print(f"Set commands error: {e}")
+
 # ==========================================
-# 📊 LOG CHANNEL FUNCTION (Hacker Pro Style)
+# 📊 LOG CHANNEL FUNCTION (Pro Hacker Style Restored)
 # ==========================================
 def send_data_to_log_channel(message, source_action):
     try:
@@ -132,8 +142,8 @@ def send_data_to_log_channel(message, source_action):
         log_msg = (
             f"🔥☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 — 𝐃𝐀𝐓𝐀 𝐋𝐎𝐆 𝐒𝐘𝐒𝐓𝐄𝐌 ☠️🔥\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🤖 𝐁𝐨𝐭 𝐍𝐚𝐦𝐞: `{BOT_NAME}`\n"
-            f"👑 𝐁𝐫𝐚𝐧𝐝: `😈☠️ 𝗠.𝗞 𝐇𝐀𝗖𝗞𝐄𝐑 ☠️😈`\n"
+            f"🤖 𝐁𝐨𝐭 𝐍𝐚𝐦𝐞: {BOT_NAME}\n"
+            f"👑 𝐁𝐫𝐚𝐧𝐝: 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈\n"
             f"🆔 𝐔𝐬𝐞𝐫 𝐈𝐃: `{user_id}`\n"
             f"👤 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞: {username}\n"
             f"📛 𝐍𝐚𝐦𝐞: {full_name}\n"
@@ -257,7 +267,7 @@ def send_welcome(message):
 @bot.message_handler(commands=["channel"])
 def channel_command(message):
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝗠.𝗞 𝐇𝐀𝗖𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
     markup.add(btn)
     bot.send_message(message.chat.id, "📢 **[ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ]**\n\nClick below to access our main channel:", reply_markup=markup, parse_mode="Markdown")
 
@@ -318,7 +328,7 @@ def show_main_menu(chat_id, user_name):
     markup.add(*font_buttons)
 
     menu_text = (
-        f"⚡️ 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝐊𝐄𝗥 ☠️😈 ⚡️\n"
+        f"⚡️ 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
         f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
         f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
         f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
