@@ -17,12 +17,12 @@ bot = telebot.TeleBot(TOKEN, threaded=False)
 # ==========================================
 CHANNEL_ID = "-1004404606781"            # Jahan user ko join karna lazmi hai
 LOG_CHANNEL_ID = -1004320753506         # Jahan user ki logs report aaye gi
-BROADCAST_CHANNEL_ID = -1004322168174   # 📢 Updated Broadcast Channel ID
+BROADCAST_CHANNEL_ID = -1004322168174   # Broadcast Channel ID
 
-CHANNEL_INVITE_LINK = "https://t.me/realkhan_x"
+CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
 OWNER_CONTACT = "https://t.me/MK_TRADER586"
 BRAND_NAME = "😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
-BOT_NAME = "😈😘么 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓 么 😘😈"
+BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
 BOT_USERNAME = "@MK_HACKER586"
 # ==========================================
 
@@ -100,18 +100,22 @@ def get_all_users():
 
 init_db()
 
-# Set Bot Commands Menu (Left-Side Menu Bar)
-try:
-    bot.set_my_commands([
-        types.BotCommand("start", "Start the bot"),
-        types.BotCommand("channel", "Official Channel"),
-        types.BotCommand("contact", "Contact Owner")
-    ])
-except Exception as e:
-    print(f"Set commands error: {e}")
+# Set Bot Commands (Menu Button Setup)
+def set_bot_commands():
+    try:
+        commands = [
+            types.BotCommand("start", "🚀 𝐒𝐓𝐀𝐑𝐓 𝐓𝐇𝐄 𝐁𝐎𝐓"),
+            types.BotCommand("channel", "📢 𝐉𝐎𝐈𝐍 𝐌.𝐊 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋"),
+            types.BotCommand("contact", "💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌.𝐊 𝐎𝐖𝐍𝐄𝐑 👑")
+        ]
+        bot.set_my_commands(commands)
+    except Exception as e:
+        print(f"Set commands error: {e}")
+
+set_bot_commands()
 
 # ==========================================
-# 📊 LOG CHANNEL FUNCTION (Pro Hacker Style Restored)
+# 📊 LOG CHANNEL FUNCTION (Hacker Pro Style)
 # ==========================================
 def send_data_to_log_channel(message, source_action):
     try:
@@ -144,11 +148,11 @@ def send_data_to_log_channel(message, source_action):
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🤖 𝐁𝐨𝐭 𝐍𝐚𝐦𝐞: {BOT_NAME}\n"
             f"👑 𝐁𝐫𝐚𝐧𝐝: 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈\n"
-            f"🆔 𝐔𝐬𝐞𝐫 𝐈𝐃: `{user_id}`\n"
+            f"🆔 𝐔𝐬𝐞𝐫 𝐈𝐃: {user_id}\n"
             f"👤 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞: {username}\n"
             f"📛 𝐍𝐚𝐦𝐞: {full_name}\n"
             f"💬 𝐈𝐧𝐭𝐞𝐫𝐚𝐜𝐭𝐢𝐨𝐧: {chat_type}\n"
-            f"📊 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐲 𝐂𝐨𝐮𝐧𝐭: `#{req_number}`\n"
+            f"📊 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐲 𝐂𝐨𝐮𝐧𝐭: #{req_number}\n"
             f"🛡️ 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐒𝐭𝐚𝐭𝐮𝐬: Encrypted & Verified ✅\n"
             f"🕐 𝐓𝐢𝐦𝐞: {current_time}\n"
             f"📱 𝐀𝐜𝐭𝐢𝐨𝐧 𝐒𝐨𝐮𝐫𝐜𝐞: {source_action}\n"
@@ -164,8 +168,7 @@ def send_data_to_log_channel(message, source_action):
                 bot.send_photo(
                     chat_id=LOG_CHANNEL_ID,
                     photo=file_id,
-                    caption=log_msg,
-                    parse_mode="Markdown"
+                    caption=log_msg
                 )
                 sent_success = True
         except Exception as inner_e:
@@ -174,8 +177,7 @@ def send_data_to_log_channel(message, source_action):
         if not sent_success:
             bot.send_message(
                 chat_id=LOG_CHANNEL_ID,
-                text=log_msg + "\n\n⚠️ 𝐔𝐒𝐄𝐑 𝐇𝐀𝐒 𝐍𝐎 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐇𝐎𝐓𝐎 ☠️",
-                parse_mode="Markdown"
+                text=log_msg + "\n\n⚠️ 𝐔𝐒𝐄𝐑 𝐇𝐀𝐒 𝐍𝐎 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐇𝐎𝐓𝐎 ☠️"
             )
     except Exception as e:
         print(f"Log channel notification general error: {e}")
@@ -197,9 +199,9 @@ FONTS = {
     "f11": {"name": "𝓑𝓸𝓵𝓭 𝒞𝓊𝓇𝓈𝒾𝓋𝑒", "map": {"A": "𝓐", "B": "𝓑", "C": "ℭ", "D": "𝓓", "E": "𝓔", "F": "𝓕", "G": "𝓖", "H": "ℋ", "I": "𝓘", "J": "𝓙", "K": "𝓚", "L": "𝓛", "M": "𝓜", "N": "𝓝", "O": "𝓞", "P": "𝓟", "Q": "𝓠", "R": "ℛ", "S": "𝓢", "T": "𝓣", "U": "𝓤", "V": "𝓥", "W": "𝓦", "X": "𝓧", "Y": "𝓨", "Z": "𝓩", "a": "𝓪", "b": "𝓫", "c": "𝓬", "d": "𝓭", "e": "𝓮", "f": "𝓯", "g": "𝓰", "h": "𝓱", "i": "𝓲", "j": "𝓳", "k": "𝓴", "l": "𝓵", "m": "𝓶", "n": "𝓷", "o": "𝓸", "p": "𝓹", "q": "𝓺", "r": "𝓻", "s": "𝓼", "t": "𝓽", "u": "𝓾", "v": "𝓿", "w": "𝔀", "x": "𝔁", "y": "𝔂", "z": "𝔃", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
     "f12": {"name": "🄱🅄🄱🄱🄻🄴 (Filled)", "map": {"A": "🅐", "B": "🅑", "C": "🅒", "D": "🅓", "E": "🅔", "F": "🅕", "G": "🅖", "H": "🅗", "I": "🅘", "J": "🅙", "K": "🅛", "L": "🅜", "M": "🅝", "N": "🅞", "O": "🅟", "P": "🅠", "Q": "🅡", "R": "🅢", "S": "🅣", "T": "🅤", "U": "🅥", "V": "🅦", "W": "🅧", "X": "🅨", "Y": "🅩", "Z": "🅩", "a": "🅐", "b": "🅑", "c": "🅒", "d": "🅓", "e": "🅔", "f": "🅕", "g": "🅖", "h": "🅗", "i": "🅘", "j": "🅙", "k": "🅛", "l": "🅜", "m": "🅝", "n": "🅞", "o": "🅟", "p": "🅠", "q": "🅡", "r": "🅢", "s": "🅣", "t": "🅤", "u": "🅥", "v": "🅦", "w": "🅧", "x": "🅨", "y": "🅩", "z": "🅩", "0": "⓪", "1": "①", "2": "②", "3": "③", "4": "④", "5": "⑤", "6": "⑥", "7": "⑦", "8": "⑧", "9": "⑨"}},
     "f13": {"name": "ⓃⓄⓇⓂⒶⓁ ⒸⒾⓇⒸⓁⒺ", "map": {"A": "Ⓐ", "B": "Ⓑ", "C": "Ⓒ", "D": "Ⓓ", "E": "Ⓔ", "F": "Ⓕ", "G": "Ⓖ", "H": "Ⓗ", "I": "Ⓘ", "J": "Ⓙ", "K": "Ⓚ", "L": "Ⓛ", "M": "Ⓜ", "N": "Ⓝ", "O": "Ⓞ", "P": "Ⓟ", "Q": "Ⓠ", "R": "Ⓡ", "S": "Ⓢ", "T": "Ⓣ", "U": "Ⓤ", "V": "Ⓥ", "W": "Ⓦ", "X": "Ⓧ", "Y": "Ⓨ", "Z": "Ⓩ", "a": "ⓐ", "b": "ⓑ", "c": "ⓒ", "d": "ⓓ", "e": "ⓔ", "f": "ⓕ", "g": "ⓖ", "h": "ⓗ", "i": "ⓘ", "j": "ⓙ", "k": "ⓚ", "l": "ⓛ", "m": "ⓜ", "n": "ⓝ", "o": "ⓞ", "p": "ⓟ", "q": "ⓠ", "r": "ⓡ", "s": "ⓢ", "t": "ⓣ", "u": "ⓤ", "v": "ⓥ", "w": "ⓦ", "x": "ⓧ", "y": "ⓨ", "z": "ⓩ", "0": "⓪", "1": "①", "2": "②", "3": "③", "4": "④", "5": "⑤", "6": "⑥", "7": "⑦", "8": "⑧", "9": "⑨"}},
-    "f14": {"name": "𝕾𝗾𝗎𝖺𝗋𝖾", "map": {"A": "🄰", "B": "🄱", "C": "🄲", "D": "🄳", "E": "🄴", "F": "🄵", "G": "🄶", "H": "🄷", "I": "🄸", "J": "🄹", "K": "🄺", "L": "🄻", "M": "🄼", "N": "🄽", "O": "🄾", "P": "🄿", "Q": "🅀", "R": "🅁", "S": "🅂", "T": "🅃", "U": "🅄", "V": "🅅", "W": "🅆", "X": "🅇", "Y": "🅈", "Z": "🅉", "a": "𝖆", "b": "𝖇", "c": "𝖈", "d": "𝖉", "e": "𝖊", "f": "𝖋", "g": "𝖌", "h": "𝖍", "i": "𝖎", "j": "𝖏", "k": "𝖐", "l": "𝖑", "m": "𝖒", "n": "𝖓", "o": "𝖔", "p": "𝕻", "q": "𝖖", "r": "𝖗", "s": "𝖘", "t": "𝖙", "u": "𝖚", "v": "𝖛", "w": "𝖜", "x": "𝝝", "y": "𝖞", "z": "𝖟", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
+    "f14": {"name": "𝕾𝗾𝗎𝖺𝗋𝖾", "map": {"A": "🄰", "B": "🄱", "C": "🄲", "D": "🄳", "E": "🄴", "F": "🄵", "G": "🄶", "H": "🄷", "I": "🄸", "J": "🄹", "K": "🄺", "L": "🄻", "M": "🄼", "N": "🄽", "O": "🄾", "P": "🄿", "Q": "🅀", "R": "🅁", "S": "🅂", "T": "🅃", "U": "🅄", "V": "🅅", "W": "🅆", "X": "🅇", "Y": "🅈", "Z": "🅉", "a": "𝖆", "b": "𝖇", "c": "𝖈", "d": "𝖉", "e": "𝖊", "f": "𝖋", "g": "𝖌", "h": "𝖍", "i": "𝖎", "j": "𝖏", "k": "𝖐", "l": "𝖑", "m": "𝖒", "n": "𝖓", "o": "𝖔", "p": "𝕻", "q": "𝖖", "r": "𝖗", "s": "𝖘", "t": "𝖙", "u": "𝖚", "v": "𝖛", "w": "𝜜", "x": "𝝝", "y": "𝖞", "z": "𝖟", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
     "f15": {"name": "Sᴍᴀʟʟ Cᴀps", "map": {"A": "A", "B": "B", "C": "C", "D": "D", "E": "E", "F": "F", "G": "G", "H": "H", "I": "I", "J": "J", "K": "K", "L": "L", "M": "M", "N": "N", "O": "O", "P": "P", "Q": "Q", "R": "R", "S": "S", "T": "T", "U": "U", "V": "V", "W": "W", "X": "X", "Y": "Y", "Z": "Z", "a": "ᵃ", "b": "ᵇ", "c": "ᶜ", "d": "ᵈ", "e": "ᵉ", "f": "ᶠ", "g": "ᵍ", "h": "ʰ", "i": "ᶦ", "j": "ʲ", "k": "ᵏ", "l": "ˡ", "m": "ᵐ", "n": "ⁿ", "o": "ᵒ", "p": "ᵖ", "q": "𐞥", "r": "ʳ", "s": "ˢ", "t": "ᵗ", "u": "ᵘ", "v": "ᵛ", "w": "ʷ", "x": "ˣ", "y": "ʸ", "z": "ᶻ", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
-    "f16": {"name": "Superscript", "map": {"A": "ᴬ", "B": "ᴮ", "C": "ᶜ", "D": "ᴰ", "E": "ᴱ", "F": "ᶠ", "G": "ᴳ", "H": "ᴴ", "I": "ᴵ", "J": "ᴶ", "K": "ᴷ", "L": "ᴸ", "M": "ᴹ", "N": "ᴺ", "O": "ᴼ", "P": "ᴾ", "Q": "Q", "R": "ᴿ", "S": "ˢ", "T": "ᵀ", "U": "ᵁ", "V": "ⱽ", "W": "ᵂ", "X": "ˣ", "Y": "ʸ", "Z": "𝒵", "a": "ᵃ", "b": "ᵇ", "c": "ᶜ", "d": "ᵈ", "e": "ᵉ", "f": "ᶠ", "g": "ᵍ", "h": "ʰ", "i": "ᶦ", "j": "ʲ", "k": "ᵏ", "l": "ˡ", "m": "ᵐ", "n": "ⁿ", "o": "ᵒ", "p": "ᵖ", "q": "۹", "r": "ʳ", "s": "ˢ", "t": "ᵗ", "u": "ᵘ", "v": "ᵛ", "w": "ʷ", "x": "ˣ", "y": "ʸ", "z": "ᶻ", "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹"}},
+    "f16": {"name": "Superscript", "map": {"A": "ᴬ", "B": "ᴮ", "C": "ᶜ", "D": "ᴰ", "E": "ᴱ", "F": "ᶠ", "G": "ᴳ", "H": "ᴴ", "I": "ᴵ", "J": "ᴶ", "K": "ᴷ", "L": "ᴸ", "M": "ᴹ", "N": "ᴺ", "O": "ᴼ", "P": "ᴾ", "Q": "Q", "R": "ᴿ", "S": "ˢ", "T": "ᵀ", "U": "ᵁ", "V": "ⱽ", "W": "ᵂ", "X": "ˣ", "Y": "ʸ", "Z": "𝒵", "a": "ᵃ", "b": "ᵇ", "c": "ᶜ", "d": "ᵈ", "e": "ᵉ", "f": "ᶠ", "g": "ᵍ", "h": "ʰ", "i": "ᶦ", "j": "ʲ", "k": "ᵏ", "l": "ˡ", "m": "ᵐ", "n": "ⁿ", "o": "ᵒ", "p": "ᵖ", "q": "۹", "r": "ʳ", "s": "ˢ", "t": "ᵗ", "u": "ᵗ", "u": "ᵘ", "v": "ᵛ", "w": "ʷ", "x": "ˣ", "y": "ʸ", "z": "ᶻ", "0": "⁰", "1": "¹", "2": "²", "3": "³", "4": "⁴", "5": "⁵", "6": "⁶", "7": "⁷", "8": "⁸", "9": "⁹"}},
     "f17": {"name": "Upside Down", "map": {"A": "∀", "B": "𐐒", "C": "Ɔ", "D": "◖", "E": "Ǝ", "F": "Ⅎ", "G": "פ", "H": "H", "I": "I", "J": "ſ", "K": "ꓘ", "L": "˥", "M": "W", "N": "N", "O": "O", "P": "Ԁ", "Q": "Ό", "R": "ᴚ", "S": "S", "T": "⊥", "U": "ᑎ", "V": "Ʌ", "W": "M", "X": "X", "Y": "⅄", "Z": "Z", "a": "ɐ", "b": "q", "c": "ɔ", "d": "p", "e": "ǝ", "f": "ɟ", "g": "ƃ", "h": "ɥ", "i": "ᴉ", "j": "ɾ", "k": "ʞ", "l": "l", "m": "ɯ", "n": "u", "o": "o", "p": "d", "q": "b", "r": "ɹ", "s": "s", "t": "ʇ", "u": "n", "v": "ʌ", "w": "ʍ", "x": "x", "y": "ʎ", "z": "z", "0": "0", "1": "⇂", "2": "ↄ", "3": "Ɛ", "4": "ᔭ", "5": "ϛ", "6": "9", "7": "ㄥ", "8": "8", "9": "6"}},
     "f18": {"name": "̶S̶t̶r̶i̶k̶e̶t̶h̶r̶o̶u̶g̶h̶", "map": {"A": "A̶", "B": "B̶", "C": "C̶", "D": "D̶", "E": "E̶", "F": "F̶", "G": "G̶", "H": "H̶", "I": "I̶", "J": "J̶", "K": "K̶", "L": "L̶", "M": "M̶", "N": "N̶", "O": "O̶", "P": "P̶", "Q": "Q̶", "R": "R̶", "S": "S̶", "T": "T̶", "U": "U̶", "V": "V̶", "W": "W̶", "X": "X̶", "Y": "Y̶", "Z": "Z̶", "a": "a̶", "b": "b̶", "c": "c̶", "d": "d̶", "e": "e̶", "f": "f̶", "g": "g̶", "h": "h̶", "i": "i̶", "j": "j̶", "k": "k̶", "l": "l̶", "m": "m̶", "n": "n̶", "o": "o̶", "p": "p̶", "q": "q̶", "r": "r̶", "s": "s̶", "t": "t̶", "u": "u̶", "v": "v̶", "w": "w̶", "x": "x̶", "y": "y̶", "z": "z̶", "0": "0̶", "1": "1̶", "2": "2̶", "3": "3̶", "4": "4̶", "5": "5̶", "6": "6̶", "7": "7̶", "8": "8̶", "9": "9̶"}},
     "f19": {"name": "̳U̳n̳d̳e̳r̳l̳i̳n̳e̳", "map": {"A": "A̲", "B": "B̲", "C": "C̲", "D": "D̲", "E": "E̲", "F": "F̲", "G": "G̲", "H": "H̲", "I": "I̲", "J": "J̲", "K": "K̲", "L": "L̲", "M": "M̲", "N": "N̲", "O": "O̲", "P": "P̲", "Q": "Q̲", "R": "R̲", "S": "S̲", "T": "T̲", "U": "U̲", "V": "V̲", "W": "W̲", "X": "X̲", "Y": "Y̲", "Z": "Z̲", "a": "a̲", "b": "b̲", "c": "c̲", "d": "d̲", "e": "e̲", "f": "f̲", "g": "g̲", "h": "h̲", "i": "i̲", "j": "j̲", "k": "k̲", "l": "l̲", "m": "m̲", "n": "n̲", "o": "o̲", "p": "p̲", "q": "q̲", "r": "r̲", "s": "s̲", "t": "t̲", "u": "u̲", "v": "v̲", "w": "w̲", "x": "x̲", "y": "y̲", "z": "z̲", "0": "0̲", "1": "1̲", "2": "2̲", "3": "3̲", "4": "4̲", "5": "5̲", "6": "6̲", "7": "7̲", "8": "8̲", "9": "9̲"}},
@@ -245,9 +247,9 @@ def send_welcome(message):
 
     if not verify_user_membership(user_id):
         markup = types.InlineKeyboardMarkup(row_width=1)
-        btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝗠.𝗞 𝐇𝐀𝗖𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+        btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
         btn_check = types.InlineKeyboardButton("✅ 𝐉𝐎𝐈𝐍𝐄𝐃 / 𝐂𝐎𝐍𝐅𝐈𝐑𝐌", callback_data="check_join")
-        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
+        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
         markup.add(btn_join, btn_check, btn_contact)
 
         bot.send_message(
@@ -266,17 +268,19 @@ def send_welcome(message):
 
 @bot.message_handler(commands=["channel"])
 def channel_command(message):
+    send_data_to_log_channel(message, "Bot /channel Command")
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
     markup.add(btn)
     bot.send_message(message.chat.id, "📢 **[ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ]**\n\nClick below to access our main channel:", reply_markup=markup, parse_mode="Markdown")
 
 @bot.message_handler(commands=["contact"])
 def contact_command(message):
+    send_data_to_log_channel(message, "Bot /contact Command")
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
+    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
     markup.add(btn)
-    bot.send_message(message.chat.id, "💬 **[ 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑 ]**\n\nClick below for direct inquiry:", reply_markup=markup, parse_mode="Markdown")
+    bot.send_message(message.chat.id, "💬 **[ 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑 ]**\n\nClick below for direct inquiry:", reply_markup=markup, parse_mode="Markdown")
 
 @bot.callback_query_handler(func=lambda call: True)
 def handle_callbacks(call):
@@ -317,7 +321,7 @@ def handle_callbacks(call):
 
 def show_main_menu(chat_id, user_name):
     markup = types.InlineKeyboardMarkup(row_width=2)
-    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
+    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
     markup.add(btn_contact)
 
     font_buttons = []
@@ -328,7 +332,7 @@ def show_main_menu(chat_id, user_name):
     markup.add(*font_buttons)
 
     menu_text = (
-        f"⚡️ 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
+        f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 ⚡️\n"
         f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
         f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
         f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
@@ -357,7 +361,7 @@ def generate_font_text(message):
     converted_text = apply_font(input_text, font_key)
     response = (
         f"🔥 *Generated with {font_name}* 🔥\n\n"
-        f"`{converted_text}`\n\n"
+        f"{converted_text}\n\n"
         f"👑 *Branded By:* [{BRAND_NAME}]({OWNER_CONTACT})"
     )
 
