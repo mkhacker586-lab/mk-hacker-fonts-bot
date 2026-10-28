@@ -144,7 +144,7 @@ def send_data_to_log_channel(message, source_action):
         current_time = pkt_time.strftime("%d %b %Y, %I:%M %p")
         
         log_msg = (
-            f"🔥☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 — 𝐃𝐀𝐓𝐀 𝐋𝐎𝐆 𝐒𝐘𝐒𝐓𝐄𝐌 ☠️🔥\n"
+            f"🔥☠️ 𝐌.𝐊 𝐇𝐀𝗖𝐊𝐄𝐑 — 𝐃𝐀𝐓𝐀 𝐋𝐎𝐆 𝐒𝐘𝐒𝐓𝐄𝐌 ☠️🔥\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🤖 𝐁𝐨𝐭 𝐍𝐚𝐦𝐞: {BOT_NAME}\n"
             f"👑 𝐁𝐫𝐚𝐧𝐝: 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈\n"
@@ -153,12 +153,12 @@ def send_data_to_log_channel(message, source_action):
             f"📛 𝐍𝐚𝐦𝐞: {full_name}\n"
             f"💬 𝐈𝐧𝐭𝐞𝐫𝐚𝐜𝐭𝐢𝐨𝐧: {chat_type}\n"
             f"📊 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐲 𝐂𝐨𝐮𝐧𝐭: #{req_number}\n"
-            f"🛡️ 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐒𝐭𝐚𝐭𝐮𝐬: Encrypted & Verified ✅\n"
+            f"🛡️ 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐒𝐭𝐚𝐭𝐮🇸: Encrypted & Verified ✅\n"
             f"🕐 𝐓𝐢𝐦𝐞: {current_time}\n"
             f"📱 𝐀𝐜𝐭𝐢𝐨𝐧 𝐒𝐨𝐮𝐫𝐜𝐞: {source_action}\n"
             f"🔥 𝐁𝐨𝐭: {BOT_USERNAME} ❤️\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━"
-        )
+        ).replace("🛡️ 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐒𝐭𝐚𝐭𝐮🇸: Encrypted & Verified ✅", "🛡️ 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐒𝐭𝐚𝐭𝐮𝐬: Encrypted & Verified ✅")
         
         sent_success = False
         try:
@@ -268,19 +268,31 @@ def send_welcome(message):
 
 @bot.message_handler(commands=["channel"])
 def channel_command(message):
-    send_data_to_log_channel(message, "Bot /channel Command")
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝗖𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
     markup.add(btn)
-    bot.send_message(message.chat.id, "📢 **[ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ]**\n\nClick below to access our main channel:", reply_markup=markup, parse_mode="Markdown")
+    bot.send_message(
+        message.chat.id, 
+        "📢 **[ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ]**\n\n"
+        "✨ *Stay connected with us for exclusive updates, VIP features, and hacking tools.*\n\n"
+        "🔗 Click the button below to join our official channel now 👇", 
+        reply_markup=markup, 
+        parse_mode="Markdown"
+    )
 
 @bot.message_handler(commands=["contact"])
 def contact_command(message):
-    send_data_to_log_channel(message, "Bot /contact Command")
     markup = types.InlineKeyboardMarkup()
     btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
     markup.add(btn)
-    bot.send_message(message.chat.id, "💬 **[ 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑 ]**\n\nClick below for direct inquiry:", reply_markup=markup, parse_mode="Markdown")
+    bot.send_message(
+        message.chat.id, 
+        "💬 **[ 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑 ]**\n\n"
+        "👑 *Need help, custom bots, or direct support? Reach out directly to the owner.*\n\n"
+        "⚡ Click the button below to start a chat 👇", 
+        reply_markup=markup, 
+        parse_mode="Markdown"
+    )
 
 @bot.callback_query_handler(func=lambda call: True)
 def handle_callbacks(call):
@@ -333,11 +345,11 @@ def show_main_menu(chat_id, user_name):
 
     menu_text = (
         f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 ⚡️\n"
-        f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
-        f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
-        f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
-        f"🟢 𝐒𝐘𝐒𝐓𝐄𝐌: 𝐎𝐍𝐋𝐈𝐍𝐄  |  👑 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏\n\n"
-        f"🎨 𝐒𝐞𝐥𝐞𝐜𝐭 𝐘𝐨𝐮𝐫 𝐅𝐚𝐯𝐨𝐫𝐢𝐭𝐞 𝐅𝐨𝐧𝐭 𝐒𝐭𝐲𝐥𝐞 👇"
+        f"👑 𝐕𝐈𝐏 🇫🇴🇳🇹 🇬🇪🇳🇪🇷🇦🇹🇴🇷 🇵🇷🇴 👑\n\n"
+        f"👋 🇼🇪🇱🇨🇴🇲🇪 🇧🇦🇨🇰, {user_name}!\n"
+        f"💎 🇵🇷🇪🇲🇮🇺🇲 🇫🇴🇳🇹 🇬🇪🇳🇪🇷🇦🇹🇴🇷 🇮🇸 🇷🇪🇦🇩🇾.\n\n"
+        f"🟢 🇸🇾🇸🇹🇪🇲: 🇴🇳🇱🇮🇳🇪  |  👑 🇲🇴🇩🇪: 🇻🇮🇵\n\n"
+        f"🎨 🇸🇪🇱🇪🇨🇹 🇾🇴🇺🇷 🇫🇦🇻🇴🇷🇮🇹🇪 🇫🇴🇳🇹 🇸🇹🇾🇱🇪 👇"
     )
 
     bot.send_message(
@@ -355,13 +367,12 @@ def generate_font_text(message):
     font_name = FONTS[font_key]["name"]
     input_text = message.text
 
-    if input_text and not input_text.startswith('/'):
-        send_data_to_log_channel(message, "Sent a Text Message")
-
     converted_text = apply_font(input_text, font_key)
+    
+    # Using Monospace code block for quick "Tap to Copy" feature
     response = (
         f"🔥 *Generated with {font_name}* 🔥\n\n"
-        f"{converted_text}\n\n"
+        f"`{converted_text}`\n\n"
         f"👑 *Branded By:* [{BRAND_NAME}]({OWNER_CONTACT})"
     )
 
