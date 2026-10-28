@@ -271,38 +271,34 @@ def channel_command(message):
     markup = types.InlineKeyboardMarkup()
     btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
     markup.add(btn)
-    bot.send_message
-(
-    message.chat.id,
-    "📢 **𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋**\n\n"
-    "✨ **𝐒𝐭𝐚𝐲 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 • 𝐒𝐭𝐚𝐲 𝐔𝐩𝐝𝐚𝐭𝐞𝐝**\n\n"
-    "🔥 𝐆𝐞𝐭 𝐭𝐡𝐞 𝐋𝐚𝐭𝐞𝐬𝐭 𝐔𝐩𝐝𝐚𝐭𝐞𝐬, 𝐍𝐞𝐰 𝐁𝐨𝐭 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, "
-    "𝐀𝐧𝐧𝐨𝐮𝐧𝐜𝐞𝐦𝐞𝐧𝐭𝐬, 𝐚𝐧𝐝 𝐄𝐱𝐜𝐥𝐮𝐬𝐢𝐯𝐞 𝐑𝐞𝐥𝐞𝐚𝐬𝐞𝐬 "
-    "𝐟𝐫𝐨𝐦 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑.\n\n"
-    "👇 **𝐓𝐚𝐩 𝐭𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧 𝐁𝐞𝐥𝐨𝐰 𝐭𝐨 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥!**",
-    reply_markup=markup,
-    parse_mode="Markdown"
-)
-
+    bot.send_message(
+        message.chat.id,
+        "📢 **𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋**\n\n"
+        "✨ **𝐒𝐭𝐚𝐲 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 • 𝐒𝐭𝐚𝐲 𝐔𝐩𝐝𝐚𝐭𝐞𝐝**\n\n"
+        "🔥 𝐆𝐞𝐭 𝐭𝐡𝐞 𝐋𝐚𝐭𝐞𝐬𝐭 𝐔𝐩𝐝𝐚𝐭𝐞𝐬, 𝐍𝐞𝐰 𝐁𝐨𝐭 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, "
+        "𝐀𝐧𝐧𝐨𝐮𝐧𝐜𝐞𝐦𝐞𝐧𝐭𝐬, 𝐚𝐧𝐝 𝐄𝐱𝐜𝐥𝐮𝐬𝐢𝐯𝐞 𝐑𝐞𝐥𝐞𝐚𝐬𝐞𝐬 "
+        "𝐟𝐫𝐨𝐦 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑.\n\n"
+        "👇 **𝐓𝐚𝐩 𝐭𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧 𝐁𝐞𝐥𝐨𝐰 𝐭𝐨 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥!**",
+        reply_markup=markup,
+        parse_mode="Markdown"
+    )
 
 @bot.message_handler(commands=["contact"])
 def contact_command(message):
     markup = types.InlineKeyboardMarkup()
     btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
     markup.add(btn)
-    bot.send_message
-(
-    message.chat.id,
-    "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
-    "⚡ **𝐍𝐞𝐞𝐝 𝐇𝐞𝐥𝐩, 𝐂𝐮𝐬𝐭𝐨𝐦 𝐁𝐨𝐭𝐬, 𝐨𝐫 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐒𝐮𝐩𝐩𝐨𝐫𝐭?**\n\n"
-    "🤖 𝐆𝐞𝐭 𝐇𝐞𝐥𝐩 𝐖𝐢𝐭𝐡 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭, "
-    "𝐂𝐮𝐬𝐭𝐨𝐦 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐈𝐧𝐪𝐮𝐢𝐫𝐢𝐞𝐬.\n\n"
-    "👑 **𝐃𝐢𝐫𝐞𝐜𝐭 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 • 𝐏𝐞𝐫𝐬𝐨𝐧𝐚𝐥𝐢𝐳𝐞𝐝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭**\n\n"
-    "👇 **𝐓𝐚𝐩 𝐭𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧 𝐁𝐞𝐥𝐨𝐰 𝐭𝐨 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐭𝐡𝐞 𝐎𝐰𝐧𝐞𝐫!**",
-    reply_markup=markup,
-    parse_mode="Markdown"
-)
-
+    bot.send_message(
+        message.chat.id,
+        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
+        "⚡ **𝐍𝐞𝐞𝐝 𝐇𝐞𝐥𝐩, 𝐂𝐮𝐬𝐭𝐨𝐦 𝐁𝐨𝐭𝐬, 𝐨𝐫 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐒𝐮𝐩𝐩𝐨𝐫𝐭?**\n\n"
+        "🤖 𝐆𝐞𝐭 𝐇𝐞𝐥𝐩 𝐖𝐢𝐭𝐡 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭, "
+        "𝐂𝐮𝐬𝐭𝐨𝐦 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐈𝐧𝐪𝐮𝐢𝐫𝐢𝐞𝐬.\n\n"
+        "👑 **𝐃𝐢𝐫𝐞𝐜𝐭 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 • 𝐏𝐞𝐫𝐬𝐨𝐧𝐚𝐥𝐢𝐳𝐞𝐝 𝐒𝐮𝐩𝐩𝐨𝐫𝐭**\n\n"
+        "👇 **𝐓𝐚𝐩 𝐭𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧 𝐁𝐞𝐥𝐨𝐰 𝐭𝐨 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐭𝐡𝐞 𝐎𝐰𝐧𝐞𝐫!**",
+        reply_markup=markup,
+        parse_mode="Markdown"
+    )
 
 @bot.callback_query_handler(func=lambda call: True)
 def handle_callbacks(call):
@@ -343,7 +339,7 @@ def handle_callbacks(call):
 
 def show_main_menu(chat_id, user_name):
     markup = types.InlineKeyboardMarkup(row_width=2)
-    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝗔𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
+    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
     markup.add(btn_contact)
 
     font_buttons = []
