@@ -23,7 +23,7 @@ CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
 OWNER_CONTACT = "https://t.me/MK_TRADER586"
 BRAND_NAME = "😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
 BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
-BOT_USERNAME = "@MK_HACKER586"
+BOT_USERNAME = "@MK_HACKER_FONTS_BOT"
 # ==========================================
 
 # ==========================================
@@ -143,6 +143,7 @@ def send_data_to_log_channel(message, source_action):
         pkt_time = datetime.datetime.utcnow() + datetime.timedelta(hours=5)
         current_time = pkt_time.strftime("%d %b %Y, %I:%M %p")
         
+        # Single line session status format to avoid extra spacing
         log_msg = (
             f"🔥☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 — 𝐃𝐀𝐓𝐀 𝐋𝐎𝐆 𝐒𝐘𝐒𝐓𝐄𝐌 ☠️🔥\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
@@ -273,9 +274,10 @@ def channel_command(message):
     markup.add(btn)
     bot.send_message(
         message.chat.id, 
-        "📢 **[ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ]**\n\n"
-        "✨ Stay connected with us for exclusive updates, VIP features, and hacking tools.\n\n"
-        "🔗 Click the button below to join our official channel now 👇", 
+        "📢 **𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋**\n\n"
+        "✨ **Stay Connected • Stay Updated**\n\n"
+        "🔥 Get the Latest Updates, New Bot Features, Announcements, and Exclusive Releases from M.K HACKER.\n\n"
+        "👇 **Tap the Button Below to Join Our Official Channel!**", 
         reply_markup=markup, 
         parse_mode="Markdown"
     )
@@ -287,9 +289,11 @@ def contact_command(message):
     markup.add(btn)
     bot.send_message(
         message.chat.id, 
-        "💬 **[ 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐎𝐖𝐍𝐄𝐑 ]**\n\n"
-        "👑 Need help, custom bots, or direct support? Reach out directly to the owner.\n\n"
-        "⚡ Click the button below to start a chat 👇", 
+        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
+        "⚡ **Need Help, Custom Bots, or Technical Support?**\n\n"
+        "🤖 Get Help With Bot Development, Custom Features, and Project Inquiries.\n\n"
+        "👑 **Direct Contact • Personalized Support**\n\n"
+        "👇 **Tap the Button Below to Contact the Owner!**", 
         reply_markup=markup, 
         parse_mode="Markdown"
     )
@@ -344,10 +348,10 @@ def show_main_menu(chat_id, user_name):
     markup.add(*font_buttons)
 
     menu_text = (
-        f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 ⚡️\n"
+        f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝗔𝐂𝐊𝐄𝗥 ☠️😈 ⚡️\n"
         f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
         f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
-        f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
+        f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝🇾.\n\n"
         f"🟢 𝐒𝐘𝐒𝐓𝐄𝐌: 𝐎𝐍𝐋𝐈𝐍𝐄  |  👑 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏\n\n"
         f"🎨 𝐒𝐞𝐥𝐞𝐜𝐭 𝐘𝐨𝐮𝐫 𝐅𝐚𝐯𝐨𝐫𝐢𝐭𝐞 𝐅𝐨𝐧𝐭 𝐒𝐭𝐲𝐥𝐞 👇"
     )
