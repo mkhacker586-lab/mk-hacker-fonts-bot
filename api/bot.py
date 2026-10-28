@@ -153,10 +153,10 @@ def send_data_to_log_channel(message, source_action):
             f"📛 𝐍𝐚𝐦𝐞: {full_name}\n"
             f"💬 𝐈𝐧𝐭𝐞𝐫𝐚𝐜𝐭𝐢𝐨𝐧: {chat_type}\n"
             f"📊 𝐀𝐜𝐭𝐢𝐯𝐢𝐭𝐲 𝐂𝐨𝐮𝐧𝐭: #{req_number}\n"
-            f"🛡️ 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐒𝐭𝐚𝐭𝐮𝐬: Encrypted & Verified ✅\n"
+            f"🛡️ 𝐒𝐞𝐬𝐬𝐢𝐨𝐧 𝐒𝐭𝐚𝐭𝐮𝐬: Secured & Verified ✅\n"
             f"🕐 𝐓𝐢𝐦𝐞: {current_time}\n"
             f"📱 𝐀𝐜𝐭𝐢𝐨𝐧 𝐒𝐨𝐮𝐫𝐜𝐞: {source_action}\n"
-            f"🔥 𝐁𝐨𝐭: {BOT_USERNAME} 𓆩❤️𓆪\n"
+            f"🔥 𝐁𝐨𝐭: {BOT_USERNAME} 𓆩☠︎︎𓆪\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━"
         )
         
