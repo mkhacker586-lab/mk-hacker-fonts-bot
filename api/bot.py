@@ -281,7 +281,7 @@ def send_welcome(message):
         markup = types.InlineKeyboardMarkup(row_width=1)
         btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
         btn_check = types.InlineKeyboardButton("✅ 𝐉𝐎𝐈𝐍𝐄𝐃 / 𝐂𝐎𝐍𝐅𝐈𝐑𝐌", callback_data="check_join")
-        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
+        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝐂𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
         markup.add(btn_join, btn_check, btn_contact)
 
         bot.send_message(
@@ -318,11 +318,11 @@ def channel_command(message):
 @bot.message_handler(commands=["contact"])
 def contact_command(message):
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
+    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝐊 𝗛𝗔𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
     markup.add(btn)
     bot.send_message(
         message.chat.id,
-        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
+        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
         "⚡ **𝐍𝐞𝐞𝐝 𝐇𝐞𝐥𝐩, 𝐂𝐮𝐬𝐭𝐨𝐦 𝐁𝐨𝐭𝐬, 𝐨𝐫 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐒𝐮𝐩𝐩𝐨𝐫𝐭?**\n\n"
         "🤖 𝐆𝐞𝐭 𝐇𝐞𝐥𝐩 𝐖𝐢𝐭𝐡 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭, "
         "𝐂𝐮𝐬𝐭𝐨𝐦 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐈𝐧𝐪𝐮𝐢𝐫𝐢𝐞𝐬.\n\n"
@@ -368,9 +368,10 @@ def handle_callbacks(call):
             f"💎 **𝐀𝐜𝐜𝐨𝐮𝐧𝐭 𝐒𝐭𝐚𝐭𝐮𝐬:** `{status}` ✅\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🔥 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐂𝐎𝐔𝐍𝐓. 𝐘𝐎𝐔𝐑 𝐒𝐓𝐀𝐓𝐒.**\n"
-          )
+            f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
+        )
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        markup.add(types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
         try:
             bot.edit_message_text(acc_text, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
         except Exception:
@@ -381,22 +382,22 @@ def handle_callbacks(call):
         bookmarks = get_user_bookmarks(user_id)
         if not bookmarks:
             txt = (
-                f"💾 **𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓 𝐁𝐎𝐎𝐊𝐌𝐀𝐑𝐊𝐒**\n"
+                f"💾 **Saved Fonts**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
-                f"📚 **𝐘𝐎𝐔𝐑 𝐏𝐄𝐑𝐒𝐎𝐍𝐀𝐋 𝐅𝐎𝐍𝐓 𝐂𝐎𝐋𝐋𝐄𝐂𝐓𝐈𝐎𝐍**\n\n"
-                f"❌ **𝐍𝐎 𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓𝐒 𝐘𝐄𝐓!**\n\n"
+                f"📚 **YOUR PERSONAL FONT COLLECTION**\n\n"
+                f"❌ **NO SAVED FONTS YET!**\n\n"
                 f"💡 Save your favourite font styles here for quick access.\n\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
             )
         else:
-            txt = f"💾 **𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓 𝐁𝐎𝐎𝐊𝐌𝐀𝐑𝐊𝐒**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            txt = f"💾 **Saved Fonts**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
             for name, sample, dt in bookmarks:
                 txt += f"▪️ **{name}** ({dt}):\n`{sample}`\n\n"
             txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
         
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        markup.add(types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
         try:
             bot.edit_message_text(txt, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
         except Exception:
@@ -412,23 +413,23 @@ def handle_callbacks(call):
 
         if not rows:
             txt = (
-                f"📜 **𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n"
+                f"📜 **History Logs**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
-                f"📂 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐑𝐄𝐏𝐎𝐑𝐓**\n\n"
-                f"❌ **𝐍𝐎 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐅𝐎𝐔𝐍𝐃!**\n\n"
+                f"📂 **YOUR ACTIVITY REPORT**\n\n"
+                f"❌ **NO ACTIVITY FOUND!**\n\n"
                 f"📝 Your activity history is empty.\n"
                 f"✨ Start using the bot to build your history!\n\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n"
                 f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
             )
         else:
-            txt = f"📜 **𝐂𝐇𝐑𝐎𝐍𝐎𝐋𝐎𝐆𝐈𝐂𝐀𝐋 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            txt = f"📜 **History Logs**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
             for act, payload, ts in rows:
                 txt += f"🔹 **{act}** [{ts}]:\n`{payload}`\n\n"
-            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
+            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝐂𝐊𝗘𝗥 ☠️😈"
 
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        markup.add(types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
         try:
             bot.edit_message_text(txt, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
         except Exception:
@@ -444,24 +445,19 @@ def handle_callbacks(call):
             "selected_font": call.data,
         }
         bot.answer_callback_query(call.id)
-        prompt_msg = (
-            f"✍ *Selected Style:* `{font_name}`\n\n"
-            f"💬 **Ab apna normal text yahan chat mein send karein instant conversion ke liye!**"
+        bot.send_message(
+            chat_id,
+            f"✍ *Selected Style:* `{font_name}`\n\nAb apna normal text yahan send karein convert karne ke liye:",
+            parse_mode="Markdown",
         )
-        markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
-        try:
-            bot.edit_message_text(prompt_msg, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
-        except Exception:
-            bot.send_message(chat_id, prompt_msg, reply_markup=markup, parse_mode="Markdown")
 
 def show_main_menu(chat_id, user_name, message_id=None):
     markup = types.InlineKeyboardMarkup(row_width=2)
     
-    btn_acc = types.InlineKeyboardButton("👤 𝐌𝐲 𝐀𝐜𝐜𝐨𝐮𝐧𝐭", callback_data="my_account")
-    btn_saved = types.InlineKeyboardButton("💾 𝐒𝐚𝐯𝐞𝐝 𝐅𝐨𝐧𝐭𝐬", callback_data="saved_fonts")
-    btn_hist = types.InlineKeyboardButton("📜 𝐇𝐢𝐬𝐭𝐨𝐫𝐲 𝐋𝐨𝐠𝐬", callback_data="history_logs")
-    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫 👑", url=OWNER_CONTACT)
+    btn_acc = types.InlineKeyboardButton("👤 My Account", callback_data="my_account")
+    btn_saved = types.InlineKeyboardButton("💾 Saved Fonts", callback_data="saved_fonts")
+    btn_hist = types.InlineKeyboardButton("📜 History Logs", callback_data="history_logs")
+    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
     
     markup.add(btn_acc, btn_saved)
     markup.add(btn_hist, btn_contact)
@@ -474,7 +470,7 @@ def show_main_menu(chat_id, user_name, message_id=None):
     markup.add(*font_buttons)
 
     menu_text = (
-        f"⚡️ 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
+        f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 ⚡️\n"
         f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
         f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
         f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
@@ -515,7 +511,7 @@ def generate_font_text(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(
         types.InlineKeyboardButton("💾 𝐒𝐚𝐯𝐞 𝐁𝐨𝐨𝐤𝐦𝐚𝐫𝐤", callback_data=f"bookmark_save_{font_key}"),
-        types.InlineKeyboardButton("🔙 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu")
+        types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu")
     )
 
     user_state[user_id] = None
