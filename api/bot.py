@@ -7,7 +7,7 @@ import telebot
 from telebot import types
 
 # ==========================================
-# 🚀 𝑴.𝑲 𝑯𝑨𝑪𝑲𝑬𝑹 𝑶𝑭𝑭𝑰𝑪𝑰𝑨𝑳 𝑪𝑶𝑵𝑭𝑰𝑮 & 𝑺𝑴𝑨𝑹𝑻 𝑪𝑶𝑹𝑬
+# 🚀 M.K HACKER OFFICIAL CONFIG & SYSTEM CORE
 # ==========================================
 TOKEN = os.environ.get("BOT_TOKEN", "8891413386:AAEDJkXrzf7_BA_urUlNtvyhHAIJRU6TZnU")
 bot = telebot.TeleBot(TOKEN, threaded=False)
@@ -17,15 +17,15 @@ LOG_CHANNEL_ID = -1004320753506         # Data Log Channel ID
 BROADCAST_CHANNEL_ID = -1004322168174   # Broadcast Channel ID
 
 CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
-OWNER_CONTACT = "https://t.me/MK_HACKERR586"
-BRAND_NAME = "😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈"
+OWNER_CONTACT = "https://t.me/MK_TRADER586"
+BRAND_NAME = "😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
 BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
 BOT_USERNAME = "@MK_HACKER_FONTS_BOT"
 
 DB_FILE = "/tmp/hacker_bot_pro_max.db"
 
 # ==========================================
-# 🗄️ 𝑺𝑸𝑳𝑰𝑻𝑬 𝑫𝑨𝑻𝑨𝑩𝑨𝑺𝑬 & 𝑷𝑬𝑹𝑴𝑨𝑵𝑬𝑵𝑻 𝑺𝑻𝑶𝑹𝑨𝑮𝑬
+# 🗄️ SQLITE DATABASE & PERMANENT STORAGE
 # ==========================================
 def init_enterprise_db():
     try:
@@ -37,7 +37,7 @@ def init_enterprise_db():
                 username TEXT,
                 full_name TEXT,
                 joined_date TEXT,
-                vip_status TEXT DEFAULT '𝑬𝑳𝑰𝑻𝑬',
+                vip_status TEXT DEFAULT 'ELITE',
                 conversions_count INTEGER DEFAULT 0
             )
         ''')
@@ -68,7 +68,7 @@ def init_enterprise_db():
         conn.commit()
         conn.close()
     except Exception as e:
-        print(f"𝑫𝑩 𝑰𝒏𝒊𝒕 𝑬𝒓𝒓𝒐𝒓: {e}")
+        print(f"DB Init Error: {e}")
 
 init_enterprise_db()
 
@@ -98,7 +98,7 @@ def save_user_enterprise(user_id, username, full_name):
         conn.commit()
         conn.close()
     except Exception as e:
-        print(f"𝑼𝒔𝒆𝒓 𝒔𝒂𝒗𝒆 𝒆𝒓𝒓𝒐𝒓: {e}")
+        print(f"User save error: {e}")
 
 def log_activity_enterprise(user_id, action, payload):
     try:
@@ -113,7 +113,7 @@ def log_activity_enterprise(user_id, action, payload):
         conn.commit()
         conn.close()
     except Exception as e:
-        print(f"𝑨𝒄𝒕𝒊𝒗𝒊𝒕𝒚 𝒍𝒐𝒈 𝒆𝒓𝒓𝒐𝒓: {e}")
+        print(f"Activity log error: {e}")
 
 def get_user_profile_data(user_id):
     try:
@@ -122,9 +122,9 @@ def get_user_profile_data(user_id):
         cursor.execute("SELECT joined_date, vip_status, conversions_count FROM users WHERE user_id = ?", (user_id,))
         row = cursor.fetchone()
         conn.close()
-        return row if row else ("07 Nov 2026, 04:36 PM", "𝑬𝑳𝑰𝑻𝑬", 0)
+        return row if row else ("07 Nov 2026, 04:36 PM", "ELITE", 0)
     except Exception as e:
-        return ("07 Nov 2026, 04:36 PM", "𝑬𝑳𝑰𝑻𝑬", 0)
+        return ("07 Nov 2026, 04:36 PM", "ELITE", 0)
 
 def save_font_bookmark(user_id, name, text):
     try:
@@ -138,7 +138,7 @@ def save_font_bookmark(user_id, name, text):
         conn.commit()
         conn.close()
     except Exception as e:
-        print(f"𝑩𝒐𝒐𝒌𝒎𝒂𝒓𝒌 𝒆𝒓𝒓𝒐𝒓: {e}")
+        print(f"Bookmark error: {e}")
 
 def get_user_bookmarks(user_id):
     try:
@@ -163,7 +163,7 @@ def get_all_registered_users():
         return []
 
 # ==========================================
-# 🎨 𝑪𝑶𝑴𝑷𝑳𝑬𝑻𝑬 30+ 𝑷𝑹𝑶 𝑭𝑶𝑵𝑻𝑺 𝑫𝑰𝑪𝑻𝑰𝑶𝑵𝑨𝑹𝒀
+# 🎨 COMPLETE 30+ PRO FONTS DICTIONARY
 # ==========================================
 FONTS = {
     "f1": {"name": "𝐁𝐨𝐥𝐝 𝐒𝐞𝐫𝐢𝐟", "map": {"A": "𝐀", "B": "𝐁", "C": "𝐂", "D": "𝐃", "E": "𝐄", "F": "𝐅", "G": "𝐆", "H": "𝐇", "I": "𝐈", "J": "𝐉", "K": "𝐊", "L": "𝐋", "M": "𝐌", "N": "𝐍", "O": "𝐎", "P": "𝐏", "Q": "𝐐", "R": "𝐑", "S": "𝐒", "T": "𝐓", "U": "𝐔", "V": "𝐕", "W": "𝐖", "X": "𝐗", "Y": "𝐘", "Z": "𝐙", "a": "𝐚", "b": "𝐛", "c": "𝐜", "d": "𝐝", "e": "𝐞", "f": "𝐟", "g": "𝐠", "h": "𝐡", "i": "𝐢", "j": "𝐣", "k": "𝐤", "l": "𝐥", "m": "𝐦", "n": "𝐧", "o": "𝐨", "p": "𝐩", "q": "𝐪", "r": "𝐫", "s": "𝐬", "t": "𝐭", "u": "𝐮", "v": "𝐯", "w": "𝐰", "x": "𝐱", "y": "𝐲", "z": "𝐳", "0": "𝟎", "1": "𝟏", "2": "𝟐", "3": "𝟑", "4": "𝟒", "5": "𝟓", "6": "𝟔", "7": "𝟕", "8": "𝟖", "9": "𝟗"}},
@@ -194,7 +194,7 @@ FONTS = {
     "f26": {"name": "𝕯𝖆𝖗𝖐 𝕬𝖓𝙌𝖊𝖑", "map": {"A": "𝕬", "B": "𝕭", "C": "𝕮", "D": "𝕯", "E": "𝕰", "F": "𝕱", "G": "𝕲", "H": "𝕳", "I": "𝕴", "J": "𝕵", "K": "𝕶", "L": "𝕷", "M": "𝕸", "N": "𝕹", "O": "𝕺", "P": "𝕻", "Q": "𝕼", "R": "𝕽", "S": "𝕾", "T": "𝕿", "U": "𝖀", "V": "𝖁", "W": "𝖂", "X": "𝖃", "Y": "𝕄", "Z": "𝖅", "a": "𝖆", "b": "𝖇", "c": "𝖈", "d": "𝖉", "e": "𝖊", "f": "𝖋", "g": "𝖌", "h": "𝖍", "i": "𝖎", "j": "𝖏", "k": "𝖐", "l": "𝖑", "m": "𝖒", "n": "𝖓", "o": "𝖔", "p": "𝕻", "q": "𝖖", "r": "𝖗", "s": "𝖘", "t": "𝖙", "u": "𝖚", "v": "𝖛", "w": "𝜘", "x": "𝝝", "y": "𝖞", "z": "𝖟", "0": "𝟎", "1": "𝟏", "2": "𝟐", "3": "𝟑", "4": "𝟒", "5": "𝟓", "6": "𝟔", "7": "𝟕", "8": "𝟖", "9": "𝟗"}},
     "f27": {"name": "Old English", "map": {"A": "𝔄", "B": "𝔅", "C": "ℭ", "D": "𝔇", "E": "𝔈", "F": "𝔉", "G": "𝔊", "H": "ℌ", "I": "ℑ", "J": "𝔍", "K": "𝔎", "L": "𝔏", "M": "𝔐", "N": "𝔑", "O": "𝔒", "P": "𝔓", "Q": "𝔔", "R": "ℜ", "S": "𝔖", "T": "𝔗", "U": "𝔘", "V": "𝔙", "W": "𝔚", "X": "𝔛", "Y": "𝔜", "Z": "ℨ", "a": "𝔞", "b": "𝔟", "c": "𝔠", "d": "𝔡", "e": "𝔢", "f": "𝔣", "g": "𝔤", "h": "𝔥", "i": "𝔦", "j": "𝔧", "k": "𝔨", "l": "𝔩", "m": "𝔪", "n": "𝔫", "o": "𝔬", "p": "𝔭", "q": "𝔮", "r": "𝔯", "s": "𝔰", "t": "𝔱", "u": "𝔲", "v": "𝔳", "w": "𝔴", "x": "𝔵", "y": "𝔶", "z": "𝔷", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
     "f28": {"name": "Cyber Square", "map": {"A": "🄰", "B": "🄱", "C": "🄲", "D": "🄳", "E": "🄴", "F": "🄵", "G": "🄶", "H": "🄷", "I": "🄸", "J": "🄹", "K": "🄺", "L": "🄻", "M": "🄼", "N": "🄽", "O": "🄾", "P": "🄿", "Q": "🅀", "R": "🅁", "S": "🅂", "T": "🅃", "U": "🅄", "V": "🅅", "W": "🅆", "X": "🅇", "Y": "🅈", "Z": "🅉", "a": "🄰", "b": "🄱", "c": "🄲", "d": "🄳", "e": "🄴", "f": "🄵", "g": "🄶", "h": "🄷", "i": "🄸", "j": "🄹", "k": "🄺", "l": "🄻", "m": "🄼", "n": "🄽", "o": "🄾", "p": "🄿", "q": "🅀", "r": "🅁", "s": "🅂", "t": "🅃", "u": "🅄", "v": "🅅", "w": "🅆", "x": "🅇", "y": "🅈", "z": "🅉", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
-    "f29": {"name": "Royal Script", "map": {"A": "ℬ", "B": "ℬ", "C": "𝒞", "D": "𝒟", "E": "ℰ", "F": "ℱ", "G": "𝒢", "H": "ℋ", "I": "ℐ", "J": "𝒥", "K": "𝒦", "L": "𝒧", "M": "ℳ", "N": "𝒩", "O": "𝒪", "P": "𝒫", "Q": "𝒬", "R": "ℛ", "S": "𝒮", "T": "𝒯", "U": "𝒰", "V": "𝒱", "W": "𝒲", "X": "𝒳", "Y": "𝒴", "Z": "𝒵", "a": "𝒶", "b": "𝒷", "c": "𝒸", "d": "𝒹", "e": "ℯ", "f": "𝒻", "g": "𝒊", "h": "𝒽", "i": "𝒾", "j": "𝒿", "k": "𝓀", "l": "𝓁", "m": "𝓂", "n": "𝓃", "o": "ℴ", "p": "𝓅", "q": "𝓆", "r": "𝓇", "s": "𝓈", "t": "𝓉", "u": "𝓊", "v": "𝓋", "w": "𝓌", "x": "𝓍", "y": "𝓎", "z": "𝓏", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
+    "f29": {"name": "Royal Script", "map": {"A": "ℬ", "B": "ℬ", "C": "𝒞", "D": "𝒟", "E": "ℰ", "F": "ℱ", "G": "𝒢", "H": "ℋ", "I": "ℐ", "J": "𝒥", "K": "𝒦", "L": "ℒ", "M": "ℳ", "N": "𝒩", "O": "𝒪", "P": "𝒫", "Q": "𝒬", "R": "ℛ", "S": "𝒮", "T": "𝒯", "U": "𝒰", "V": "𝒱", "W": "𝒲", "X": "𝒳", "Y": "𝒴", "Z": "𝒵", "a": "𝒶", "b": "𝒷", "c": "𝒸", "d": "𝒹", "e": "ℯ", "f": "𝒻", "g": "𝒊", "h": "𝒽", "i": "𝒾", "j": "𝒿", "k": "𝓀", "l": "𝓁", "m": "𝓂", "n": "𝓃", "o": "ℴ", "p": "𝓅", "q": "𝓆", "r": "𝓇", "s": "𝓈", "t": "𝓉", "u": "𝓊", "v": "𝓋", "w": "𝓌", "x": "𝓍", "y": "𝓎", "z": "𝓏", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
     "f30": {"name": "Pro Special Bold", "map": {"A": "𝚷", "B": "𝐁", "C": "𝐂", "D": "𝐃", "E": "𝐄", "F": "𝐅", "G": "𝐆", "H": "𝐇", "I": "𝚰", "J": "𝐉", "K": "𝐊", "L": "𝐋", "M": "𝐌", "N": "𝐍", "O": "𝐎", "P": "𝐏", "Q": "𝐐", "R": "𝐑", "S": "𝕾", "T": "𝐓", "U": "𝐔", "V": "𝐕", "W": "𝐖", "X": "𝐗", "Y": "𝐘", "Z": "𝐙", "a": "𝐚", "b": "𝐛", "c": "𝐜", "d": "𝐝", "e": "𝐞", "f": "𝐟", "g": "𝐠", "h": "𝐡", "i": "𝐢", "j": "𝐣", "k": "𝐤", "l": "𝐥", "m": "𝐦", "n": "𝐧", "o": "𝐨", "p": "𝐩", "q": "𝕢", "r": "𝐫", "s": "𝐬", "t": "𝐭", "u": "𝐮", "v": "𝐯", "w": "𝐰", "x": "𝐱", "y": "𝐲", "z": "𝐳", "0": "𝟎", "1": "𝟏", "2": "𝟐", "3": "𝟑", "4": "𝟒", "5": "𝟓", "6": "𝟔", "7": "𝟕", "8": "𝟖", "9": "𝟗"}}
 }
 
@@ -212,11 +212,11 @@ def verify_user_membership(user_id):
         if member.status in ["member", "creator", "administrator", "restricted"]:
             return True
     except Exception as e:
-        print(f"𝑺𝒖𝒃𝒔𝒄𝒓𝒊𝒑𝒕𝒊𝒐𝒏 𝒄𝒉𝒆𝒄𝒌 𝒆𝒓𝒓𝒐𝒓: {e}")
+        print(f"Subscription check error: {e}")
     return False
 
 # ==========================================
-# 📊 𝑫𝑨𝑻𝑨 𝑳𝑶𝑮 𝑪𝑯𝑨𝑵𝑵𝑬𝑳 𝑭𝑼𝑵𝑪𝑻𝑰𝑶𝑵
+# 📊 DATA LOG CHANNEL FUNCTION
 # ==========================================
 def send_data_to_log_channel(message, source_action):
     try:
@@ -266,10 +266,10 @@ def send_data_to_log_channel(message, source_action):
 
         bot.send_message(chat_id=LOG_CHANNEL_ID, text=log_msg + "\n\n⚠️ 𝐔𝐒𝐄𝐑 𝐇𝐀𝐒 𝐍𝐎 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐇𝐎𝐓𝐎 ☠️")
     except Exception as e:
-        print(f"𝑳𝒐𝒈 𝒆𝒓𝒓𝒐𝒓: {e}")
+        print(f"Log error: {e}")
 
 # ==========================================
-# 🤖 𝑯𝑨𝑵𝑫𝑳𝑬𝑹𝑺 & 𝑬𝑫𝑰𝑻 𝑴𝑬𝑺𝑺𝑨𝑮𝑬 𝑵𝑨𝑽𝑰𝑮𝑨𝑻𝑰𝑶𝑵
+# 🤖 HANDLERS & EDIT MESSAGE NAVIGATION
 # ==========================================
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
@@ -281,7 +281,7 @@ def send_welcome(message):
         markup = types.InlineKeyboardMarkup(row_width=1)
         btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
         btn_check = types.InlineKeyboardButton("✅ 𝐉𝐎𝐈𝐍𝐄𝐃 / 𝐂𝐎𝐍𝐅𝐈𝐑𝐌", callback_data="check_join")
-        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
+        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
         markup.add(btn_join, btn_check, btn_contact)
 
         bot.send_message(
@@ -318,11 +318,11 @@ def channel_command(message):
 @bot.message_handler(commands=["contact"])
 def contact_command(message):
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
+    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
     markup.add(btn)
     bot.send_message(
         message.chat.id,
-        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
+        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
         "⚡ **𝐍𝐞𝐞𝐝 𝐇𝐞𝐥𝐩, 𝐂𝐮𝐬𝐭𝐨𝐦 𝐁𝐨𝐭𝐬, 𝐨𝐫 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐒𝐮𝐩𝐩𝐨𝐫𝐭?**\n\n"
         "🤖 𝐆𝐞𝐭 𝐇𝐞𝐥𝐩 𝐖𝐢𝐭𝐡 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭, "
         "𝐂𝐮𝐬𝐭𝐨𝐦 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐈𝐧𝐪𝐮𝐢𝐫𝐢𝐞𝐬.\n\n"
@@ -359,17 +359,16 @@ def handle_callbacks(call):
         joined_date, status, conv_count = get_user_profile_data(user_id)
         acc_text = (
             f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈\n"
-            f"💎 **𝑽𝑰𝑷 𝑷𝑹𝑶𝑭𝑰𝑳𝑬 𝑫𝑨𝑺𝑯𝑩𝑶𝑨𝑹𝑫** 💎\n"
+            f"💎 **𝐕𝐈𝐏 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃** 💎\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🆔 **𝑼𝒔𝒆𝒓 𝑰𝑫:** `{user_id}`\n"
-            f"📛 **𝑭𝒖𝒍𝒍 𝑵𝒂𝒎𝒆:** {user_name}\n"
-            f"📅 **𝑹𝒆𝒈𝒊𝒔𝒕𝒓𝒂𝒕𝒊𝒐𝒏:** {joined_date}\n"
-            f"⚡ **𝑷𝒓𝒐𝒄𝒆𝒔𝒔𝒆𝒅 𝑻𝒆𝒙𝒕𝒔:** `{conv_count}`\n"
-            f"💎 **𝑨𝒄𝒄𝒐𝒖𝒏𝒕 𝑺𝒕𝒂𝒕𝒖𝒔:** `{status}` ✅\n"
+            f"🆔 **𝐔𝐬𝐞𝐫 𝐈𝐃:** `{user_id}`\n"
+            f"📛 **𝐅𝐮𝐥𝐥 𝐍𝐚𝐦𝐞:** {user_name}\n"
+            f"📅 **𝐑𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐭𝐢𝐨𝐧:** {joined_date}\n"
+            f"⚡ **𝐏𝐫𝐨𝐜𝐞𝐬𝐬𝐞𝐝 𝐓𝐞𝐱𝐭𝐬:** `{conv_count}`\n"
+            f"💎 **𝐀𝐜𝐜𝐨𝐮𝐧𝐭 𝐒𝐭𝐚𝐭𝐮𝐬:** `{status}` ✅\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
-            f"🔥 **𝒀𝑶𝑼𝑹 𝑨𝑪𝑪𝑶𝑼𝑵𝑻. 𝒀𝑶𝑼𝑹 𝑺𝑻𝑨𝑻𝑺.**\n"
-            f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
-        )
+            f"🔥 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐂𝐎𝐔𝐍𝐓. 𝐘𝐎𝐔𝐑 𝐒𝐓𝐀𝐓𝐒.**\n"
+          )
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
         try:
@@ -382,19 +381,19 @@ def handle_callbacks(call):
         bookmarks = get_user_bookmarks(user_id)
         if not bookmarks:
             txt = (
-                f"💾 **𝑺𝒂𝒗𝒆𝒅 𝑭𝒐𝒏𝒕𝒔**\n"
+                f"💾 **𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓 𝐁𝐎𝐎𝐊𝐌𝐀𝐑𝐊𝐒**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
-                f"📚 **𝒀𝑶𝑼𝑹 𝑷𝑬𝑹𝑺𝑶𝑵𝑨𝑳 𝑭𝑶𝑵𝑻 𝑪𝑶𝑳𝑳𝑬𝑪𝑻𝑰𝑶𝑵**\n\n"
-                f"❌ **𝑵𝑶 𝑺𝑨𝑽𝑬𝑫 𝑭𝑶𝑵𝑻𝑺 𝒀𝑬𝑻!**\n\n"
+                f"📚 **𝐘𝐎𝐔𝐑 𝐏𝐄𝐑𝐒𝐎𝐍𝐀𝐋 𝐅𝐎𝐍𝐓 𝐂𝐎𝐋𝐋𝐄𝐂𝐓𝐈𝐎𝐍**\n\n"
+                f"❌ **𝐍𝐎 𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓𝐒 𝐘𝐄𝐓!**\n\n"
                 f"💡 Save your favourite font styles here for quick access.\n\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝐊𝗘𝗥 ☠️😈"
+                f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
             )
         else:
-            txt = f"💾 **𝑺𝒂𝒗𝒆𝒅 𝑭𝒐𝒏𝒕𝒔**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            txt = f"💾 **𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓 𝐁𝐎𝐎𝐊𝐌𝐀𝐑𝐊𝐒**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
             for name, sample, dt in bookmarks:
                 txt += f"▪️ **{name}** ({dt}):\n`{sample}`\n\n"
-            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝐊𝗘𝗥 ☠️😈"
+            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
         
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
@@ -413,20 +412,20 @@ def handle_callbacks(call):
 
         if not rows:
             txt = (
-                f"📜 **𝑯𝒊𝒔𝒕𝒐𝒓𝒚 𝑳𝒐𝒈𝒔**\n"
+                f"📜 **𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
-                f"📂 **𝒀𝑶𝑼𝑹 𝑨𝑪𝑻𝑰𝑽𝑰𝑻𝒀 𝑹𝑬𝑷𝑶𝑹𝑻**\n\n"
-                f"❌ **𝑵𝑶 𝑨𝑪𝑻𝑰𝑽𝑰𝑻𝒀 𝑭𝑶𝑼𝑵𝑫!**\n\n"
+                f"📂 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐑𝐄𝐏𝐎𝐑𝐓**\n\n"
+                f"❌ **𝐍𝐎 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐅𝐎𝐔𝐍𝐃!**\n\n"
                 f"📝 Your activity history is empty.\n"
                 f"✨ Start using the bot to build your history!\n\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝐊𝗘𝗥 ☠️😈"
+                f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
             )
         else:
-            txt = f"📜 **𝑯𝒊𝒔𝒕𝒐𝒓𝒚 𝑳𝒐𝒈𝒔**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            txt = f"📜 **𝐂𝐇𝐑𝐎𝐍𝐎𝐋𝐎𝐆𝐈𝐂𝐀𝐋 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
             for act, payload, ts in rows:
                 txt += f"🔹 **{act}** [{ts}]:\n`{payload}`\n\n"
-            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝐊𝗘𝗥 ☠️😈"
+            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
 
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
@@ -445,19 +444,24 @@ def handle_callbacks(call):
             "selected_font": call.data,
         }
         bot.answer_callback_query(call.id)
-        bot.send_message(
-            chat_id,
-            f"✍ *Selected Style:* `{font_name}`\n\nAb apna normal text yahan send karein convert karne ke liye:",
-            parse_mode="Markdown",
+        prompt_msg = (
+            f"✍ *Selected Style:* `{font_name}`\n\n"
+            f"💬 **Ab apna normal text yahan chat mein send karein instant conversion ke liye!**"
         )
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        try:
+            bot.edit_message_text(prompt_msg, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
+        except Exception:
+            bot.send_message(chat_id, prompt_msg, reply_markup=markup, parse_mode="Markdown")
 
 def show_main_menu(chat_id, user_name, message_id=None):
     markup = types.InlineKeyboardMarkup(row_width=2)
     
-    btn_acc = types.InlineKeyboardButton("👤 𝑴𝒚 𝑨𝒄𝒄𝒐𝒖𝒏𝒕", callback_data="my_account")
-    btn_saved = types.InlineKeyboardButton("💾 𝑺𝒂𝒗𝒆𝒅 𝑭𝒐𝒏𝒕𝒔", callback_data="saved_fonts")
-    btn_hist = types.InlineKeyboardButton("📜 𝑯𝒊𝒔𝒕𝒐𝒓𝒚 𝑳𝒐𝒈𝒔", callback_data="history_logs")
-    btn_contact = types.InlineKeyboardButton("💬 𝑪𝑶𝑵𝑻𝑨𝑪𝑻 𝑶𝑾𝑵𝑬𝑹 👑", url=OWNER_CONTACT)
+    btn_acc = types.InlineKeyboardButton("👤 𝐌𝐲 𝐀𝐜𝐜𝐨𝐮𝐧𝐭", callback_data="my_account")
+    btn_saved = types.InlineKeyboardButton("💾 𝐒𝐚𝐯𝐞𝐝 𝐅𝐨𝐧𝐭𝐬", callback_data="saved_fonts")
+    btn_hist = types.InlineKeyboardButton("📜 𝐇𝐢𝐬𝐭𝐨𝐫𝐲 𝐋𝐨𝐠𝐬", callback_data="history_logs")
+    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫 👑", url=OWNER_CONTACT)
     
     markup.add(btn_acc, btn_saved)
     markup.add(btn_hist, btn_contact)
@@ -465,17 +469,17 @@ def show_main_menu(chat_id, user_name, message_id=None):
     font_buttons = []
     for key, data in FONTS.items():
         font_buttons.append(
-            types.InlineKeyboardButton(data['name'], callback_data=key)
+            types.InlineKeyboardButton(f"✨ {data['name']}", callback_data=key)
         )
     markup.add(*font_buttons)
 
     menu_text = (
-        f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 ⚡️\n"
-        f"👑 𝑽𝑰𝑷 𝑭𝑶𝑵𝑻 𝑮𝑬𝑵𝑬𝑹𝑨𝑻𝑶𝑹 𝑷𝑹𝑶 👑\n\n"
-        f"👋 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 𝑩𝒂𝒄𝒌, {user_name}!\n"
-        f"💎 𝑷𝒓𝒆𝒎𝒊𝒖𝒎 𝑭𝒐𝒏𝒕 𝑮𝒆𝒏𝒆𝒓𝒂𝒕𝒐𝒓 𝑰𝒔 𝑹𝒆𝒂𝒅𝒚.\n\n"
-        f"🟢 𝑺𝒀𝑺𝑻𝑬𝑴: 𝑶𝑵𝑳𝑰𝑵𝑬  |  👑 𝑴𝑶𝑫𝑬: 𝑽𝑰𝑷\n\n"
-        f"🎨 𝑺𝒆𝒍𝒆𝒄𝒕 𝒀𝒐𝒖𝒓 𝑭𝒂𝒗𝒐𝒓𝒊𝒕𝒆 𝑭𝒐𝒏𝒕 𝑺𝒕𝒚𝒍𝒆 👇"
+        f"⚡️ 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
+        f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
+        f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
+        f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
+        f"🟢 𝐒𝐘𝐒𝐓𝐄𝐌: 𝐎𝐍𝐋𝗜𝐍𝐄  |  👑 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏\n\n"
+        f"🎨 𝐒𝐞𝐥𝐞𝐜𝐭 𝐘𝐨𝐮𝐫 𝐅𝐚𝐯𝐨𝐫𝐢𝐭𝐞 𝐅𝐨𝐧𝐭 𝐒𝐭𝐲𝐥𝐞 👇"
     )
 
     if message_id:
@@ -510,8 +514,8 @@ def generate_font_text(message):
 
     markup = types.InlineKeyboardMarkup()
     markup.add(
-        types.InlineKeyboardButton("💾 𝑺𝒂𝒗𝒆 𝑩𝒐𝒐𝒌𝒎𝒂𝒓𝒌", callback_data=f"bookmark_save_{font_key}"),
-        types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu")
+        types.InlineKeyboardButton("💾 𝐒𝐚𝐯𝐞 𝐁𝐨𝐨𝐤𝐦𝐚𝐫𝐤", callback_data=f"bookmark_save_{font_key}"),
+        types.InlineKeyboardButton("🔙 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu")
     )
 
     user_state[user_id] = None
@@ -524,7 +528,7 @@ def generate_font_text(message):
     )
 
 # ==========================================
-# 📢 𝑩𝑹𝑶𝑨𝑫𝑪𝑨𝑺𝑻 𝑪𝑯𝑨𝑵𝑵𝑬𝑳 𝑷𝑶𝑺𝑻 𝑭𝑶𝑹𝑾𝑨𝑹𝑫𝑬𝑹
+# 📢 BROADCAST CHANNEL POST FORWARDER
 # ==========================================
 @bot.channel_post_handler(func=lambda message: str(message.chat.id) == str(BROADCAST_CHANNEL_ID))
 def broadcast_posts(message):
@@ -538,9 +542,9 @@ def broadcast_posts(message):
                     message_id=message.message_id
                 )
             except Exception as ex:
-                print(f"𝑭𝒐𝒓𝒘𝒂𝒓𝒅 𝒆𝒓𝒓𝒐𝒓 𝒕𝒐 𝒖𝒔𝒆𝒓 {uid}: {ex}")
+                print(f"Forward error to user {uid}: {ex}")
     except Exception as e:
-        print(f"𝑩𝒓𝒐𝒂𝒅𝒄𝒂𝒔𝒕 𝒉𝒂𝒏𝒅𝒍𝒆𝒓 𝒆𝒓𝒓𝒐𝒓: {e}")
+        print(f"Broadcast handler error: {e}")
 
 # Vercel Serverless Webhook Handler
 class handler(BaseHTTPRequestHandler):
@@ -557,7 +561,7 @@ class handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b'OK')
         except Exception as e:
-            print(f"𝑾𝒆𝒃𝒉𝒐𝒐𝒌 𝒆𝒓𝒓𝒐𝒓: {e}")
+            print(f"Webhook error: {e}")
             self.send_response(500)
             self.end_headers()
 
