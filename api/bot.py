@@ -17,7 +17,7 @@ LOG_CHANNEL_ID = -1004320753506         # Data Log Channel ID
 BROADCAST_CHANNEL_ID = -1004322168174   # Broadcast Channel ID
 
 CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
-OWNER_CONTACT = "https://t.me/MK_TRADER586"
+OWNER_CONTACT = "https://t.me/MK_HACKER586"
 BRAND_NAME = "😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
 BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
 BOT_USERNAME = "@MK_HACKER_FONTS_BOT"
