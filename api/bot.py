@@ -17,9 +17,9 @@ LOG_CHANNEL_ID = -1004320753506         # Data Log Channel ID
 BROADCAST_CHANNEL_ID = -1004322168174   # Broadcast Channel ID
 
 CHANNEL_INVITE_LINK = "https://t.me/MK_HACKERR586"
-OWNER_CONTACT = "https://t.me/MK_TRADER586"
+OWNER_CONTACT = "https://t.me/MK_HACKERR586"
 BRAND_NAME = "😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
-BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
+BOT_NAME = "😈😘么𝐌.𝐊 𝐇𝐀𝐂𝐊𝗘𝐑 𝐅𝐎𝐍𝐓'𝐒 𝐁𝐎𝐓么😘😈"
 BOT_USERNAME = "@MK_HACKER_FONTS_BOT"
 
 DB_FILE = "/tmp/hacker_bot_pro_max.db"
@@ -264,7 +264,7 @@ def send_data_to_log_channel(message, source_action):
         except Exception:
             pass
 
-        bot.send_message(chat_id=LOG_CHANNEL_ID, text=log_msg + "\n\n⚠️ 𝐔𝐒𝐄𝐑 𝐇𝐀𝐒 𝐍𝐎 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐇𝐎𝐓𝐎 ☠️")
+        bot.send_message(chat_id=LOG_CHANNEL_ID, text=log_msg + "\n\n⚠️ 𝐔𝐒𝐄𝐑 𝐇𝐀𝐒 𝐍𝐎 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐏𝐇𝐎𝐓𝐎 𝜌️")
     except Exception as e:
         print(f"Log error: {e}")
 
@@ -279,16 +279,16 @@ def send_welcome(message):
 
     if not verify_user_membership(user_id):
         markup = types.InlineKeyboardMarkup(row_width=1)
-        btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+        btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
         btn_check = types.InlineKeyboardButton("✅ 𝐉𝐎𝐈𝐍𝐄𝐃 / 𝐂𝐎𝐍𝐅𝐈𝐑𝐌", callback_data="check_join")
-        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝐂𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
+        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
         markup.add(btn_join, btn_check, btn_contact)
 
         bot.send_message(
             message.chat.id,
             f"👋 𝐇𝐞𝐥𝐥𝐨 {user_name}!\n\n"
             f"🚨 𝐒𝐘𝐒𝐓𝐄𝐌 𝐀𝐂𝐂𝐄𝐒𝐒 𝐑𝐄𝐒𝐓𝐑𝐈𝐂𝐓𝐄𝐃\n\n"
-            f"🔐 𝐉𝐨𝐢𝐧 𝐨𝐮𝐫 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝒆𝐋 𝐭𝐨 𝐮𝐧𝐥𝐨𝐜𝐤 𝐛𝐨𝐭 𝐚𝐜𝐜𝐞𝐬𝐬.\n\n"
+            f"🔐 𝐉𝐨𝐢𝐧 𝐨𝐮𝐫 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 𝐭𝐨 𝐮𝐧𝐥𝐨𝐜𝐤 𝐛𝐨𝐭 𝐚𝐜𝐜𝐞𝐬𝐬.\n\n"
             f"📌 𝐀𝐟𝐭𝐞𝐫 𝐣𝐨𝐢𝐧𝐢𝐧𝐠, 𝐜𝐥𝐢𝐜𝐤:\n"
             f"✅ 𝐉𝐎𝐈𝐍𝐄𝐃 / 𝐂𝐎𝐍𝐅𝐈𝐑𝐌",
             reply_markup=markup,
@@ -301,15 +301,15 @@ def send_welcome(message):
 @bot.message_handler(commands=["channel"])
 def channel_command(message):
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
     markup.add(btn)
     bot.send_message(
         message.chat.id,
-        "📢 **😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ☠️😈**\n\n"
+        "📢 **😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋 𝐂𝐇𝐀𝐍𝐍𝐄𝐋 ☠️😈**\n\n"
         "✨ **𝐒𝐭𝐚𝐲 𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐞𝐝 • 𝐒𝐭𝐚𝐲 𝐔𝐩𝐝𝐚𝐭𝐞𝐝**\n\n"
         "🔥 𝐆𝐞𝐭 𝐭𝐡𝐞 𝐋𝐚𝐭𝐞𝐬𝐭 𝐔𝐩𝐝𝐚𝐭𝐞𝐬, 𝐍𝐞𝐰 𝐁𝐨𝐭 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, "
         "𝐀𝐧𝐧𝐨𝐮𝐧𝐜𝐞𝐦𝐞𝐧𝐭𝐬, 𝐚𝐧𝐝 𝐄𝐱𝐜𝐥𝐮𝐬𝐢𝐯𝐞 𝐑𝐞𝐥𝐞𝐚𝐬𝐞𝐬 "
-        "𝐟𝐫𝐨𝐦 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑.\n\n"
+        "𝐟𝐫𝐨𝐦 𝐌.𝐊 𝐇𝐀𝐂𝐊𝗘𝐑.\n\n"
         "👇 **𝐓𝐚𝐩 𝐭𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧 𝐁𝐞𝐥𝐨𝐰 𝐭𝐨 𝐉𝐨𝐢𝐧 𝐎𝐮𝐫 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐇𝐀𝐍𝐍𝐄𝐋!**",
         reply_markup=markup,
         parse_mode="Markdown"
@@ -318,11 +318,11 @@ def channel_command(message):
 @bot.message_handler(commands=["contact"])
 def contact_command(message):
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝐂𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
+    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝐊 𝗛𝗔𝗖𝐊𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
     markup.add(btn)
     bot.send_message(
         message.chat.id,
-        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝐂𝐊𝐄𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
+        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝐊𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
         "⚡ **𝐍𝐞𝐞𝐝 𝐇𝐞𝐥𝐩, 𝐂𝐮𝐬𝐭𝐨𝐦 𝐁𝐨𝐭𝐬, 𝐨𝐫 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐒𝐮𝐩𝐩𝐨𝐫𝐭?**\n\n"
         "🤖 𝐆𝐞𝐭 𝐇𝐞𝐥𝐩 𝐖𝐢𝐭𝐡 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭, "
         "𝐂𝐮𝐬𝐭𝐨𝐦 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐈𝐧𝐪𝐮𝐢𝐫𝐢𝐞𝐬.\n\n"
@@ -371,7 +371,7 @@ def handle_callbacks(call):
             f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
         )
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 Return to Main Menu", callback_data="main_menu"))
+        markup.add(types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
         try:
             bot.edit_message_text(acc_text, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
         except Exception:
@@ -397,7 +397,7 @@ def handle_callbacks(call):
             txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
         
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 Return to Main Menu", callback_data="main_menu"))
+        markup.add(types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
         try:
             bot.edit_message_text(txt, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
         except Exception:
@@ -429,7 +429,7 @@ def handle_callbacks(call):
             txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
 
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 Return to Main Menu", callback_data="main_menu"))
+        markup.add(types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
         try:
             bot.edit_message_text(txt, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
         except Exception:
@@ -454,9 +454,9 @@ def handle_callbacks(call):
 def show_main_menu(chat_id, user_name, message_id=None):
     markup = types.InlineKeyboardMarkup(row_width=2)
     
-    btn_acc = types.InlineKeyboardButton("👤 My Account", callback_data="my_account")
-    btn_saved = types.InlineKeyboardButton("💾 Saved Fonts", callback_data="saved_fonts")
-    btn_hist = types.InlineKeyboardButton("📜 History Logs", callback_data="history_logs")
+    btn_acc = types.InlineKeyboardButton("My Account", callback_data="my_account")
+    btn_saved = types.InlineKeyboardButton("Saved Fonts", callback_data="saved_fonts")
+    btn_hist = types.InlineKeyboardButton("History Logs", callback_data="history_logs")
     btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
     
     markup.add(btn_acc, btn_saved)
@@ -470,7 +470,7 @@ def show_main_menu(chat_id, user_name, message_id=None):
     markup.add(*font_buttons)
 
     menu_text = (
-        f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 ⚡️\n"
+        f"⚡️ 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
         f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
         f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
         f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
@@ -511,7 +511,7 @@ def generate_font_text(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(
         types.InlineKeyboardButton("💾 𝐒𝐚𝐯𝐞 𝐁𝐨𝐨𝐤𝐦𝐚𝐫𝐤", callback_data=f"bookmark_save_{font_key}"),
-        types.InlineKeyboardButton("🔙 Return to Main Menu", callback_data="main_menu")
+        types.InlineKeyboardButton("𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu")
     )
 
     user_state[user_id] = None
@@ -561,7 +561,7 @@ class handler(BaseHTTPRequestHandler):
             self.send_response(500)
             self.end_headers()
 
-    def do_GET(self,):
+    def do_GET(self):
         self.send_response(200)
         self.send_header('Content-type', 'text/plain')
         self.end_headers()
