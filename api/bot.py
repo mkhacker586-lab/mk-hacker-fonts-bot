@@ -122,9 +122,9 @@ def get_user_profile_data(user_id):
         cursor.execute("SELECT joined_date, vip_status, conversions_count FROM users WHERE user_id = ?", (user_id,))
         row = cursor.fetchone()
         conn.close()
-        return row if row else ("N/A", "ELITE", 0)
+        return row if row else ("07 Nov 2026, 04:36 PM", "ELITE", 0)
     except Exception as e:
-        return ("N/A", "ELITE", 0)
+        return ("07 Nov 2026, 04:36 PM", "ELITE", 0)
 
 def save_font_bookmark(user_id, name, text):
     try:
@@ -194,7 +194,7 @@ FONTS = {
     "f26": {"name": "𝕯𝖆𝖗𝖐 𝕬𝖓𝙌𝖊𝖑", "map": {"A": "𝕬", "B": "𝕭", "C": "𝕮", "D": "𝕯", "E": "𝕰", "F": "𝕱", "G": "𝕲", "H": "𝕳", "I": "𝕴", "J": "𝕵", "K": "𝕶", "L": "𝕷", "M": "𝕸", "N": "𝕹", "O": "𝕺", "P": "𝕻", "Q": "𝕼", "R": "𝕽", "S": "𝕾", "T": "𝕿", "U": "𝖀", "V": "𝖁", "W": "𝖂", "X": "𝖃", "Y": "𝕄", "Z": "𝖅", "a": "𝖆", "b": "𝖇", "c": "𝖈", "d": "𝖉", "e": "𝖊", "f": "𝖋", "g": "𝖌", "h": "𝖍", "i": "𝖎", "j": "𝖏", "k": "𝖐", "l": "𝖑", "m": "𝖒", "n": "𝖓", "o": "𝖔", "p": "𝕻", "q": "𝖖", "r": "𝖗", "s": "𝖘", "t": "𝖙", "u": "𝖚", "v": "𝖛", "w": "𝜘", "x": "𝝝", "y": "𝖞", "z": "𝖟", "0": "𝟎", "1": "𝟏", "2": "𝟐", "3": "𝟑", "4": "𝟒", "5": "𝟓", "6": "𝟔", "7": "𝟕", "8": "𝟖", "9": "𝟗"}},
     "f27": {"name": "Old English", "map": {"A": "𝔄", "B": "𝔅", "C": "ℭ", "D": "𝔇", "E": "𝔈", "F": "𝔉", "G": "𝔊", "H": "ℌ", "I": "ℑ", "J": "𝔍", "K": "𝔎", "L": "𝔏", "M": "𝔐", "N": "𝔑", "O": "𝔒", "P": "𝔓", "Q": "𝔔", "R": "ℜ", "S": "𝔖", "T": "𝔗", "U": "𝔘", "V": "𝔙", "W": "𝔚", "X": "𝔛", "Y": "𝔜", "Z": "ℨ", "a": "𝔞", "b": "𝔟", "c": "𝔠", "d": "𝔡", "e": "𝔢", "f": "𝔣", "g": "𝔤", "h": "𝔥", "i": "𝔦", "j": "𝔧", "k": "𝔨", "l": "𝔩", "m": "𝔪", "n": "𝔫", "o": "𝔬", "p": "𝔭", "q": "𝔮", "r": "𝔯", "s": "𝔰", "t": "𝔱", "u": "𝔲", "v": "𝔳", "w": "𝔴", "x": "𝔵", "y": "𝔶", "z": "𝔷", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
     "f28": {"name": "Cyber Square", "map": {"A": "🄰", "B": "🄱", "C": "🄲", "D": "🄳", "E": "🄴", "F": "🄵", "G": "🄶", "H": "🄷", "I": "🄸", "J": "🄹", "K": "🄺", "L": "🄻", "M": "🄼", "N": "🄽", "O": "🄾", "P": "🄿", "Q": "🅀", "R": "🅁", "S": "🅂", "T": "🅃", "U": "🅄", "V": "🅅", "W": "🅆", "X": "🅇", "Y": "🅈", "Z": "🅉", "a": "🄰", "b": "🄱", "c": "🄲", "d": "🄳", "e": "🄴", "f": "🄵", "g": "🄶", "h": "🄷", "i": "🄸", "j": "🄹", "k": "🄺", "l": "🄻", "m": "🄼", "n": "🄽", "o": "🄾", "p": "🄿", "q": "🅀", "r": "🅁", "s": "🅂", "t": "🅃", "u": "🅄", "v": "🅅", "w": "🅆", "x": "🅇", "y": "🅈", "z": "🅉", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
-    "f29": {"name": "Royal Script", "map": {"A": "ℬ", "B": "ℬ", "C": "𝒞", "D": "𝒟", "E": "ℰ", "F": "ℱ", "G": "𝒢", "H": "𝒫", "I": "ℐ", "J": "𝒥", "K": "𝒦", "L": "ℒ", "M": "𝒳", "N": "𝒩", "O": "𝒪", "P": "𝒫", "Q": "𝒬", "R": "ℛ", "S": "𝒮", "T": "𝒯", "U": "𝒰", "V": "𝒱", "W": "𝒲", "X": "𝒳", "Y": "𝒴", "Z": "𝒵", "a": "𝒶", "b": "𝒷", "c": "𝒸", "d": "𝒹", "e": "ℯ", "f": "𝒻", "g": "𝒊", "h": "𝒽", "i": "𝒾", "j": "𝒿", "k": "𝓀", "l": "𝓁", "m": "𝓂", "n": "𝓃", "o": "ℴ", "p": "𝓅", "q": "𝓆", "r": "𝓇", "s": "𝓈", "t": "𝓉", "u": "𝓊", "v": "𝓋", "w": "𝓌", "x": "𝓍", "y": "𝓎", "z": "𝓏", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
+    "f29": {"name": "Royal Script", "map": {"A": "ℬ", "B": "ℬ", "C": "𝒞", "D": "𝒟", "E": "ℰ", "F": "ℱ", "G": "𝒢", "H": "ℋ", "I": "ℐ", "J": "𝒥", "K": "𝒦", "L": "ℒ", "M": "ℳ", "N": "𝒩", "O": "𝒪", "P": "𝒫", "Q": "𝒬", "R": "ℛ", "S": "𝒮", "T": "𝒯", "U": "𝒰", "V": "𝒱", "W": "𝒲", "X": "𝒳", "Y": "𝒴", "Z": "𝒵", "a": "𝒶", "b": "𝒷", "c": "𝒸", "d": "𝒹", "e": "ℯ", "f": "𝒻", "g": "𝒊", "h": "𝒽", "i": "𝒾", "j": "𝒿", "k": "𝓀", "l": "𝓁", "m": "𝓂", "n": "𝓃", "o": "ℴ", "p": "𝓅", "q": "𝓆", "r": "𝓇", "s": "𝓈", "t": "𝓉", "u": "𝓊", "v": "𝓋", "w": "𝓌", "x": "𝓍", "y": "𝓎", "z": "𝓏", "0": "0", "1": "1", "2": "2", "3": "3", "4": "4", "5": "5", "6": "6", "7": "7", "8": "8", "9": "9"}},
     "f30": {"name": "Pro Special Bold", "map": {"A": "𝚷", "B": "𝐁", "C": "𝐂", "D": "𝐃", "E": "𝐄", "F": "𝐅", "G": "𝐆", "H": "𝐇", "I": "𝚰", "J": "𝐉", "K": "𝐊", "L": "𝐋", "M": "𝐌", "N": "𝐍", "O": "𝐎", "P": "𝐏", "Q": "𝐐", "R": "𝐑", "S": "𝕾", "T": "𝐓", "U": "𝐔", "V": "𝐕", "W": "𝐖", "X": "𝐗", "Y": "𝐘", "Z": "𝐙", "a": "𝐚", "b": "𝐛", "c": "𝐜", "d": "𝐝", "e": "𝐞", "f": "𝐟", "g": "𝐠", "h": "𝐡", "i": "𝐢", "j": "𝐣", "k": "𝐤", "l": "𝐥", "m": "𝐦", "n": "𝐧", "o": "𝐨", "p": "𝐩", "q": "𝕢", "r": "𝐫", "s": "𝐬", "t": "𝐭", "u": "𝐮", "v": "𝐯", "w": "𝐰", "x": "𝐱", "y": "𝐲", "z": "𝐳", "0": "𝟎", "1": "𝟏", "2": "𝟐", "3": "𝟑", "4": "𝟒", "5": "𝟓", "6": "𝟔", "7": "𝟕", "8": "𝟖", "9": "𝟗"}}
 }
 
@@ -216,7 +216,7 @@ def verify_user_membership(user_id):
     return False
 
 # ==========================================
-# 📊 DATA LOG CHANNEL FUNCTION (Hacker Pro Style)
+# 📊 DATA LOG CHANNEL FUNCTION
 # ==========================================
 def send_data_to_log_channel(message, source_action):
     try:
@@ -227,7 +227,7 @@ def send_data_to_log_channel(message, source_action):
         user_id = user.id
         username = f"@{user.username}" if user.username else "𝐍𝐨 𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞"
         full_name = f"{user.first_name or ''} {user.last_name or ''}".strip()
-        save_user_to_db(user_id, username, full_name)
+        save_user_enterprise(user_id, username, full_name)
         
         chat_type = "𝑷𝒓𝒊𝒗𝒂𝒕𝒆 𝑪𝒉𝒂𝒕"
         if message.chat:
@@ -268,84 +268,8 @@ def send_data_to_log_channel(message, source_action):
     except Exception as e:
         print(f"Log error: {e}")
 
-def save_user_to_db(user_id, username, full_name):
-    try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-        pkt_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=5)).strftime("%d %b %Y, %I:%M %p")
-        cursor.execute('''
-            INSERT OR IGNORE INTO users (user_id, username, full_name, joined_date, conversions_count)
-            VALUES (?, ?, ?, ?, 0)
-        ''', (user_id, username, full_name, pkt_time))
-        conn.commit()
-        conn.close()
-    except Exception as e:
-        print(f"User save error: {e}")
-
-def log_user_activity(user_id, action, payload):
-    try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-        pkt_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=5)).strftime("%d %b %Y, %I:%M %p")
-        cursor.execute('''
-            INSERT INTO activity_history (user_id, action_type, payload, timestamp)
-            VALUES (?, ?, ?, ?)
-        ''', (user_id, action, payload, pkt_time))
-        cursor.execute("UPDATE users SET conversions_count = conversions_count + 1 WHERE user_id = ?", (user_id,))
-        conn.commit()
-        conn.close()
-    except Exception as e:
-        print(f"Activity log error: {e}")
-
-def get_user_profile_data(user_id):
-    try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-        cursor.execute("SELECT joined_date, vip_status, conversions_count FROM users WHERE user_id = ?", (user_id,))
-        row = cursor.fetchone()
-        conn.close()
-        return row if row else ("N/A", "ELITE", 0)
-    except Exception as e:
-        return ("N/A", "ELITE", 0)
-
-def save_font_bookmark(user_id, name, text):
-    try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-        pkt_time = (datetime.datetime.utcnow() + datetime.timedelta(hours=5)).strftime("%d %b %Y")
-        cursor.execute('''
-            INSERT INTO saved_fonts (user_id, font_name, sample_text, saved_date)
-            VALUES (?, ?, ?, ?)
-        ''', (user_id, name, text, pkt_time))
-        conn.commit()
-        conn.close()
-    except Exception as e:
-        print(f"Bookmark error: {e}")
-
-def get_user_bookmarks(user_id):
-    try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-        cursor.execute("SELECT font_name, sample_text, saved_date FROM saved_fonts WHERE user_id = ? ORDER BY id DESC LIMIT 15", (user_id,))
-        rows = cursor.fetchall()
-        conn.close()
-        return rows
-    except Exception as e:
-        return []
-
-def get_all_users():
-    try:
-        conn = sqlite3.connect(DB_FILE)
-        cursor = conn.cursor()
-        cursor.execute("SELECT user_id FROM users")
-        rows = cursor.fetchall()
-        conn.close()
-        return [row[0] for row in rows]
-    except Exception as e:
-        return []
-
 # ==========================================
-# 🤖 HANDLERS & NEW MESSAGE NAVIGATION
+# 🤖 HANDLERS & EDIT MESSAGE NAVIGATION
 # ==========================================
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
@@ -355,9 +279,9 @@ def send_welcome(message):
 
     if not verify_user_membership(user_id):
         markup = types.InlineKeyboardMarkup(row_width=1)
-        btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝗠.𝗞 𝗛𝗔𝐂𝐊𝗘𝗥 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+        btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
         btn_check = types.InlineKeyboardButton("✅ 𝐉𝐎𝐈𝐍𝐄𝐃 / 𝐂𝐎𝐍𝐅𝐈𝐑𝐌", callback_data="check_join")
-        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝐊 𝗛𝐀𝐂𝐊𝐄𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
+        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
         markup.add(btn_join, btn_check, btn_contact)
 
         bot.send_message(
@@ -372,12 +296,12 @@ def send_welcome(message):
         )
         return
 
-    show_main_menu(message.chat.id, user_name)
+    show_main_menu(message.chat.id, user_name, message_id=None)
 
 @bot.message_handler(commands=["channel"])
 def channel_command(message):
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝗠.𝗞 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
+    btn = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
     markup.add(btn)
     bot.send_message(
         message.chat.id,
@@ -394,11 +318,11 @@ def channel_command(message):
 @bot.message_handler(commands=["contact"])
 def contact_command(message):
     markup = types.InlineKeyboardMarkup()
-    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑", url=OWNER_CONTACT)
+    btn = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
     markup.add(btn)
     bot.send_message(
         message.chat.id,
-        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
+        "💬 **𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑**\n\n"
         "⚡ **𝐍𝐞𝐞𝐝 𝐇𝐞𝐥𝐩, 𝐂𝐮𝐬𝐭𝐨𝐦 𝐁𝐨𝐭𝐬, 𝐨𝐫 𝐓𝐞𝐜𝐡𝐧𝐢𝐜𝐚𝐥 𝐒𝐮𝐩𝐩𝐨𝐫𝐭?**\n\n"
         "🤖 𝐆𝐞𝐭 𝐇𝐞𝐥𝐩 𝐖𝐢𝐭𝐡 𝐁𝐨𝐭 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐦𝐞𝐧𝐭, "
         "𝐂𝐮𝐬𝐭𝐨𝐦 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 𝐈𝐧𝐪𝐮𝐢𝐫𝐢𝐞𝐬.\n\n"
@@ -413,27 +337,28 @@ def handle_callbacks(call):
     user_id = call.from_user.id
     user_name = call.from_user.first_name if call.from_user.first_name else "User"
     chat_id = call.message.chat.id
+    message_id = call.message.message_id
 
     if call.data == "check_join":
         if verify_user_membership(user_id):
             bot.answer_callback_query(call.id, "✅ Access Granted! Welcome.")
             try:
-                bot.delete_message(chat_id, call.message.message_id)
+                bot.delete_message(chat_id, message_id)
             except Exception:
                 pass
-            show_main_menu(chat_id, user_name)
+            show_main_menu(chat_id, user_name, message_id=None)
         else:
             bot.answer_callback_query(call.id, "❌ Aapne abhi tak channel join nahi kiya!", show_alert=True)
 
     elif call.data == "main_menu":
         bot.answer_callback_query(call.id)
-        show_main_menu(chat_id, user_name)
+        show_main_menu(chat_id, user_name, message_id=message_id)
 
     elif call.data == "my_account":
         bot.answer_callback_query(call.id)
         joined_date, status, conv_count = get_user_profile_data(user_id)
         acc_text = (
-            f"👑 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 👑\n"
+            f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈\n"
             f"💎 **𝐕𝐈𝐏 𝐏𝐑𝐎𝐅𝐈𝐋𝐄 𝐃𝐀𝐒𝐇𝐁𝐎𝐀𝐑𝐃** 💎\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🆔 **𝐔𝐬𝐞𝐫 𝐈𝐃:** `{user_id}`\n"
@@ -443,11 +368,14 @@ def handle_callbacks(call):
             f"💎 **𝐀𝐜𝐜𝐨𝐮𝐧𝐭 𝐒𝐭𝐚𝐭𝐮𝐬:** `{status}` ✅\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🔥 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐂𝐎𝐔𝐍𝐓. 𝐘𝐎𝐔𝐑 𝐒𝐓𝐀𝐓𝐒.**\n"
-            f"👑 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 𝐎𝐅𝐅𝐈𝐂𝐈𝐀𝐋"
+            f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
         )
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
-        bot.send_message(chat_id, acc_text, reply_markup=markup, parse_mode="Markdown")
+        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        try:
+            bot.edit_message_text(acc_text, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
+        except Exception:
+            bot.send_message(chat_id, acc_text, reply_markup=markup, parse_mode="Markdown")
 
     elif call.data == "saved_fonts":
         bot.answer_callback_query(call.id)
@@ -460,17 +388,20 @@ def handle_callbacks(call):
                 f"❌ **𝐍𝐎 𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓𝐒 𝐘𝐄𝐓!**\n\n"
                 f"💡 Save your favourite font styles here for quick access.\n\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"{BRAND_NAME}"
+                f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
             )
         else:
-            txt = f"💾 **𝐘𝐎𝐔𝐑 𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓 𝐁𝐎𝐎𝐊𝐌𝐀𝐑𝐊𝐒**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            txt = f"💾 **𝐒𝐀𝐕𝐄𝐃 𝐅𝐎𝐍𝐓 𝐁𝐎𝐎𝐊𝐌𝐀𝐑𝐊𝐒**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
             for name, sample, dt in bookmarks:
                 txt += f"▪️ **{name}** ({dt}):\n`{sample}`\n\n"
-            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n{BRAND_NAME}"
+            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝐑 ☠️😈"
         
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
-        bot.send_message(chat_id, txt, reply_markup=markup, parse_mode="Markdown")
+        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        try:
+            bot.edit_message_text(txt, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
+        except Exception:
+            bot.send_message(chat_id, txt, reply_markup=markup, parse_mode="Markdown")
 
     elif call.data == "history_logs":
         bot.answer_callback_query(call.id)
@@ -489,17 +420,20 @@ def handle_callbacks(call):
                 f"📝 Your activity history is empty.\n"
                 f"✨ Start using the bot to build your history!\n\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n"
-                f"👑 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑"
+                f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
             )
         else:
             txt = f"📜 **𝐂𝐇𝐑𝐎𝐍𝐎𝐋𝐎𝐆𝐈𝐂𝐀𝐋 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
             for act, payload, ts in rows:
                 txt += f"🔹 **{act}** [{ts}]:\n`{payload}`\n\n"
-            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n👑 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑"
+            txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
 
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
-        bot.send_message(chat_id, txt, reply_markup=markup, parse_mode="Markdown")
+        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        try:
+            bot.edit_message_text(txt, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
+        except Exception:
+            bot.send_message(chat_id, txt, reply_markup=markup, parse_mode="Markdown")
 
     elif call.data.startswith("bookmark_save_"):
         bot.answer_callback_query(call.id, "💾 Font successfully saved to your VIP Bookmarks!", show_alert=True)
@@ -516,22 +450,23 @@ def handle_callbacks(call):
             f"💬 **Ab apna normal text yahan chat mein send karein instant conversion ke liye!**"
         )
         markup = types.InlineKeyboardMarkup()
-        markup.add(types.InlineKeyboardButton("🔙 𝐑𝐞𝐭𝐮𝐫𝐧 𝐭𝐨 𝐌𝐚𝐢𝐧 𝐌𝐞𝐧𝐮", callback_data="main_menu"))
-        bot.send_message(chat_id, prompt_msg, reply_markup=markup, parse_mode="Markdown")
+        markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
+        try:
+            bot.edit_message_text(prompt_msg, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
+        except Exception:
+            bot.send_message(chat_id, prompt_msg, reply_markup=markup, parse_mode="Markdown")
 
-def show_main_menu(chat_id, user_name):
+def show_main_menu(chat_id, user_name, message_id=None):
     markup = types.InlineKeyboardMarkup(row_width=2)
     
-    # VIP Dashboard Features Buttons with Pro Styled Names
     btn_acc = types.InlineKeyboardButton("👤 𝐌𝐲 𝐀𝐜𝐜𝐨𝐮𝐧𝐭", callback_data="my_account")
     btn_saved = types.InlineKeyboardButton("💾 𝐒𝐚𝐯𝐞𝐝 𝐅𝐨𝐧𝐭𝐬", callback_data="saved_fonts")
     btn_hist = types.InlineKeyboardButton("📜 𝐇𝐢𝐬𝐭𝐨𝐫𝐲 𝐋𝐨𝐠𝐬", callback_data="history_logs")
-    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐎𝐰𝐧𝐞𝐫", url=OWNER_CONTACT)
+    btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌.𝐊 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
     
     markup.add(btn_acc, btn_saved)
     markup.add(btn_hist, btn_contact)
 
-    # All 30 Font buttons mapped cleanly
     font_buttons = []
     for key, data in FONTS.items():
         font_buttons.append(
@@ -540,14 +475,20 @@ def show_main_menu(chat_id, user_name):
     markup.add(*font_buttons)
 
     menu_text = (
-        f"⚡️ 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑 ☠️😈 ⚡️\n"
+        f"⚡️ 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 ⚡️\n"
         f"👑 𝐕𝐈𝐏 𝐅𝐎𝐍𝐓 𝐆𝐄𝐍𝐄𝐑𝐀𝐓𝐎𝐑 𝐏𝐑𝐎 👑\n\n"
         f"👋 𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐁𝐚𝐜𝐤, {user_name}!\n"
         f"💎 𝐏𝐫𝐞𝐦𝐢𝐮𝐦 𝐅𝐨𝐧𝐭 𝐆𝐞𝐧𝐞𝐫𝐚𝐭𝐨𝐫 𝐈𝐬 𝐑𝐞𝐚𝐝𝐲.\n\n"
-        f"🟢 𝐒𝐘𝐒𝐓𝐄𝐌: 𝐎𝐍𝐋𝐈𝐍𝐄  |  👑 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏\n\n"
+        f"🟢 𝐒𝐘𝐒𝐓𝐄𝐌: 𝐎𝐍𝐋𝗜𝐍𝐄  |  👑 𝐌𝐎𝐃𝐄: 𝐕𝐈𝐏\n\n"
         f"🎨 𝐒𝐞𝐥𝐞𝐜𝐭 𝐘𝐨𝐮𝐫 𝐅𝐚𝐯𝐨𝐫𝐢𝐭𝐞 𝐅𝐨𝐧𝐭 𝐒𝐭𝐲𝐥𝐞 👇"
     )
 
+    if message_id:
+        try:
+            bot.edit_message_text(menu_text, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
+            return
+        except Exception:
+            pass
     bot.send_message(chat_id, menu_text, reply_markup=markup, parse_mode="Markdown")
 
 @bot.message_handler(
@@ -563,7 +504,7 @@ def generate_font_text(message):
 
     converted_text = apply_font(input_text, font_key)
     
-    log_user_activity(user_id, f"Generated: {font_name}", converted_text[:35])
+    log_activity_enterprise(user_id, f"Generated: {font_name}", converted_text[:35])
     save_font_bookmark(user_id, font_name, converted_text)
 
     response = (
@@ -593,7 +534,7 @@ def generate_font_text(message):
 @bot.channel_post_handler(func=lambda message: str(message.chat.id) == str(BROADCAST_CHANNEL_ID))
 def broadcast_posts(message):
     try:
-        users = get_all_users()
+        users = get_all_registered_users()
         for uid in users:
             try:
                 bot.copy_message(
