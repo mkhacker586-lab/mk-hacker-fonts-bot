@@ -78,7 +78,7 @@ def get_next_request_count():
         cursor = conn.cursor()
         cursor.execute("SELECT value FROM counters WHERE key='request_count'")
         row = cursor.fetchone()
-        count = (row[0] + 1) if row else 1
+        count = (row[0] + 1) if row else 101  # Base starting count if empty
         cursor.execute("INSERT OR REPLACE INTO counters (key, value) VALUES ('request_count', ?)", (count,))
         conn.commit()
         conn.close()
@@ -269,7 +269,7 @@ def send_data_to_log_channel(message, source_action):
         print(f"Log error: {e}")
 
 # ==========================================
-# 🤖 HANDLERS & EDIT MESSAGE NAVIGATION
+# 🤖 HANDLERS & NAVIGATION LOGIC
 # ==========================================
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
@@ -281,7 +281,7 @@ def send_welcome(message):
         markup = types.InlineKeyboardMarkup(row_width=1)
         btn_join = types.InlineKeyboardButton("📢 𝐉𝐎𝐈𝐍 😈☠️ 𝐌.𝐊 𝐇𝐀𝐂𝐊𝐄𝐑☠️😈 𝐂𝐇𝐀𝐍𝐍𝐄𝐋", url=CHANNEL_INVITE_LINK)
         btn_check = types.InlineKeyboardButton("✅ 𝐉𝐎𝐈𝐍𝐄𝐃 / 𝐂𝐎𝐍𝐅𝐈𝐑𝐌", callback_data="check_join")
-        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
+        btn_contact = types.InlineKeyboardButton("💬 𝐂𝐎𝐍𝐓𝐀𝐂𝐓 😈☠️ 𝗠.𝗞 𝗛𝐀𝗖𝗞𝐄𝗥 ☠️😈 𝐎𝐖𝐍𝐄𝐑 👑", url=OWNER_CONTACT)
         markup.add(btn_join, btn_check, btn_contact)
 
         bot.send_message(
@@ -368,7 +368,7 @@ def handle_callbacks(call):
             f"💎 **𝐀𝐜𝐜𝐨𝐮𝐧𝐭 𝐒𝐭𝐚𝐭𝐮𝐬:** `{status}` ✅\n"
             f"━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
             f"🔥 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐂𝐎𝐔𝐍𝐓. 𝐘𝐎𝐔𝐑 𝐒𝐓𝐀𝐓𝐒.**\n"
-          )
+        )
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
         try:
@@ -414,7 +414,7 @@ def handle_callbacks(call):
             txt = (
                 f"📜 **𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n"
                 f"━━━━━━━━━━━━━━━━━━━━━━\n\n"
-                f"📂 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐑𝐄𝐏𝐎𝐑𝐓**\n\n"
+                f"📂 **𝐘𝐎𝐔𝐑 𝐀𝐂𝐓𝗜𝐕𝐈𝐓𝐘 𝐑𝐄𝐏𝐎𝐑𝐓**\n\n"
                 f"❌ **𝐍𝐎 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐅𝐎𝐔𝐍𝐃!**\n\n"
                 f"📝 Your activity history is empty.\n"
                 f"✨ Start using the bot to build your history!\n\n"
@@ -422,7 +422,7 @@ def handle_callbacks(call):
                 f"😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
             )
         else:
-            txt = f"📜 **𝐂𝐇𝐑𝐎𝐍𝐎𝐋𝐎𝐆𝐈𝐂𝐀𝐋 𝐀𝐂𝐓𝐈𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
+            txt = f"📜 **𝐂𝐇𝐑𝐎𝐍𝐎𝐋𝐎𝐆𝐈𝐂𝐀𝐋 𝐀𝐂𝐓𝗜𝐕𝐈𝐓𝐘 𝐇𝐈𝐒𝐓𝐎𝐑𝐘**\n━━━━━━━━━━━━━━━━━━━━━━\n\n"
             for act, payload, ts in rows:
                 txt += f"🔹 **{act}** [{ts}]:\n`{payload}`\n\n"
             txt += f"━━━━━━━━━━━━━━━━━━━━━━\n😈☠️ 𝗠.𝗞 𝗛𝗔𝗖𝗞𝗘𝗥 ☠️😈"
@@ -450,10 +450,9 @@ def handle_callbacks(call):
         )
         markup = types.InlineKeyboardMarkup()
         markup.add(types.InlineKeyboardButton("🔙 𝑹𝒆𝒕𝒖𝒓𝒏 𝒕𝒐 𝑴𝒂𝒊𝒏 𝑴𝒆𝒏𝒖", callback_data="main_menu"))
-        try:
-            bot.edit_message_text(prompt_msg, chat_id, message_id, reply_markup=markup, parse_mode="Markdown")
-        except Exception:
-            bot.send_message(chat_id, prompt_msg, reply_markup=markup, parse_mode="Markdown")
+        
+        # FIX: Yeh font selection par naya message bhejega, purane menu ko replace nahi karega!
+        bot.send_message(chat_id, prompt_msg, reply_markup=markup, parse_mode="Markdown")
 
 def show_main_menu(chat_id, user_name, message_id=None):
     markup = types.InlineKeyboardMarkup(row_width=2)
